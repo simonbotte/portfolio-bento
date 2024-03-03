@@ -9,7 +9,22 @@ module.exports = {
         "./error.vue",
     ],
     theme: {
-        extend: {},
+        screens: {
+            tablet: "768px",
+            laptop: "1200px",
+        },
+        extend: {
+            maxWidth: {
+                mobile: "375px",
+                tablet: "768px",
+                laptop: "1200px",
+            },
+            height: {
+                "bento-mobile": "10.25rem",
+                "bento-tablet": "14.625rem",
+                "bento-laptop": "17.5rem",
+            },
+        },
 
         colors: {
             transparent: "transparent",
@@ -25,22 +40,21 @@ module.exports = {
                 700: "#404C45",
                 800: "#2A322D",
                 900: "#181C1A",
-                "700-80":"rgba(64, 76, 68, 0.8)",
+                "700-80": "rgba(64, 76, 68, 0.8)",
             },
-            sand:{
-              50: "#F6F0EB",
-              100: "#E8DACF",
-              200: "#D8C3B1",
-              300: "#C6AC95",
-              400: "#B3967B",
-              500: "#9F8165",
-              600: "#7B6045",
-              700: "#5B4530",
-              800: "#3C2E1F",
-              900: "#211A13",
-              "200-80": "rgba(216, 195, 177, 0.8)",
-            }
+            sand: {
+                50: "#F6F0EB",
+                100: "#E8DACF",
+                200: "#D8C3B1",
+                300: "#C6AC95",
+                400: "#B3967B",
+                500: "#9F8165",
+                600: "#7B6045",
+                700: "#5B4530",
+                800: "#3C2E1F",
+                900: "#211A13",
+                "200-80": "rgba(216, 195, 177, 0.8)",
+            },
         },
     },
-    plugins: [],
 };
