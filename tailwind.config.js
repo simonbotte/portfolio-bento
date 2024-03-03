@@ -23,6 +23,9 @@ module.exports = {
                 "bento-mobile": "10.25rem",
                 "bento-tablet": "14.625rem",
                 "bento-laptop": "17.5rem",
+                "bento-mobile-2": "21.5rem",
+                "bento-tablet-2": "28.5rem",
+                "bento-laptop-2": "34.5rem",
             },
         },
 
