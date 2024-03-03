@@ -10,12 +10,12 @@ useHead({
         },
     ],
     bodyAttrs: {
-        class: "bg-jungle-900 text-sand-100 antialiased px-4",
+        class: "bg-jungle-900 text-sand-100 antialiased",
     },
 });
 </script>
 
 <template>
     <AppHeader />
-    <NuxtPage class="pt-64" />
+    <NuxtPage class="pt-48" />
 </template>
