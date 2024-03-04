@@ -6,5 +6,6 @@
         <BentoEmpty class="col-span-1" />
         <BentoPicture src="/images/suricate.jpeg" alt="Photo d'un suricate" />
         <BentoEmpty class="col-span-1" />
+        <BentoProject/>
     </section>
 </template>
