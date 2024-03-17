@@ -62,7 +62,7 @@ onMounted(async () => {
 
 <template>
     <div
-        class="bg-sand-800 p-3 h-bento-mobile-1 flex flex-col gap-2 justify-between rounded-2xl overflow-hidden tablet:p-4 tablet:h-bento-tablet laptop:p-6 laptop:h-bento-laptop"
+        class="bg-sand-800 p-3 h-bento-mobile-1 flex flex-col gap-2 justify-between rounded-2xl overflow-hidden h-bento-mobile tablet:p-4 tablet:h-bento-tablet laptop:p-6 laptop:h-bento-laptop"
     >
         <div class="">
             <NuxtImg
