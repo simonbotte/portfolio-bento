@@ -9,6 +9,6 @@
         <BentoProject/>
         <BentoJourney/>
         <BentoLink :title="'LinkedIn'" :icon="'/icons/linkedin.svg'" :link="'https://apple.com'"/>
-        <BentoMusic/>
+        <LazyBentoMusic/>
     </section>
 </template>

@@ -10,11 +10,11 @@
 // });
 
 const token = ref("");
-const { data:jwtToken} = await useFetch("/api/security/apple-jwt", { method: "POST" });
+const { data: jwtToken } = await useFetch("/api/security/apple-jwt", { method: "POST" });
 token.value = jwtToken.value.token;
 
 const userToken = ref("");
-const { data:dataUserToken} = await useFetch("/api/security/apple-user-token", { method: "POST" });
+const { data: dataUserToken } = await useFetch("/api/security/apple-user-token", { method: "POST" });
 userToken.value = dataUserToken.value.userToken;
 
 const musicUrl = ref(`https://api.music.apple.com/v1`);
@@ -40,29 +40,55 @@ const music = ref(null);
 // };
 
 const getRecentPlayed = async () => {
-    const { data, error } = await useFetch(musicUrl.value + "/me/recent/played/tracks", {
+    const { data, error } = await useFetch(musicUrl.value + "/me/recent/played/tracks?limit=1", {
         headers: {
             Authorization: `Bearer ${token.value}`,
             "Music-User-Token": userToken.value,
         },
         method: "GET",
     });
-    console.log(data.value, error);
+    return data.value.data[0];
 };
-await getRecentPlayed();
+const lastPlayedMusic = await getRecentPlayed();
+console.log(lastPlayedMusic);
 onMounted(async () => {
     // console.log("MusicKit is ready not event");
     // document.addEventListener("musickitloaded", async function () {
     //     await loadMusic();
     // });
     // await loadMusic();
-
-    
 });
 </script>
 
 <template>
     <div
-        class="bg-sand-800 px-4 py-6 h-bento-mobile-2 row-span-2 col-span-2 tablet:h-bento-tablet-2 tablet:col-span-1 laptop:h-bento-laptop-2 laptop:py-8 rounded-2xl overflow-hidden"
-    ></div>
+        class="bg-sand-800 p-3 h-bento-mobile-1 flex flex-col gap-2 justify-between rounded-2xl overflow-hidden tablet:p-4 tablet:h-bento-tablet laptop:p-6 laptop:h-bento-laptop"
+    >
+        <div class="">
+            <NuxtImg
+                src="/icons/appleMusic.svg"
+                alt="Logo Apple Music"
+                :width="36"
+                class="shrink-0 opacity-70 w-8 tablet:w-9"
+            />
+        </div>
+        <div class="flex flex-col gap-1 tablet:gap-4">
+            <div class="flex gap-2 flex-col items-start">
+                <h2 class="text-sand-100 text-sm leading-4 tablet:text-xl tablet:leading-6">Dernière écoute</h2>
+                <div class="flex flex-col gap-1">
+                    <h3
+                        class="text-sand-100 leading-4 text-sm font-bold max-h-8 overflow-hidden tablet:text-lg tablet:leading-5 tablet:max-h-14"
+                        :data-full-name="lastPlayedMusic.attributes.name"
+                    >
+                        <NuxtLink :to="lastPlayedMusic.attributes.url" target="_blank">{{
+                            lastPlayedMusic.attributes.name
+                        }}</NuxtLink>
+                    </h3>
+                    <p class="text-sand-100/80 text-xs max-h-8 overflow-hidden ">
+                        {{ lastPlayedMusic.attributes.artistName }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
 </template>
