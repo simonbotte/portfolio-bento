@@ -8,5 +8,6 @@
         <BentoEmpty class="col-span-1" />
         <BentoProject/>
         <BentoJourney/>
+        <BentoLink :title="'LinkedIn'" :icon="'/icons/linkedin.svg'" :link="'https://apple.com'"/>
     </section>
 </template>
