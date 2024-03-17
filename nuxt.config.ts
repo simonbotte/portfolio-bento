@@ -9,4 +9,10 @@ export default defineNuxtConfig({
             autoprefixer: {},
         },
     },
+    runtimeConfig: {
+        APPLE_TEAM_ID: process.env.APPLE_TEAM_ID,
+        APPLE_KEY_ID: process.env.APPLE_KEY_ID,
+        APPLE_PRIVATE_KEY: process.env.APPLE_PRIVATE_KEY,
+        APPLE_USER_TOKEN: process.env.APPLE_USER_TOKEN,
+    },
 });
