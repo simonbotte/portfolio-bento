@@ -17,5 +17,5 @@ useHead({
 
 <template>
     <AppHeader />
-    <NuxtPage class="pt-48" />
+    <NuxtPage class="pt-36 laptop:pt-44" />
 </template>
