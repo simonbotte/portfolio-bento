@@ -50,7 +50,6 @@ const getRecentPlayed = async () => {
     return data.value.data[0];
 };
 const lastPlayedMusic = await getRecentPlayed();
-console.log(lastPlayedMusic);
 onMounted(async () => {
     // console.log("MusicKit is ready not event");
     // document.addEventListener("musickitloaded", async function () {
