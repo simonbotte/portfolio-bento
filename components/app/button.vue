@@ -20,7 +20,7 @@ const props = defineProps({
 const classStyle = ref("");
 switch (props.theme) {
     case "full-sand":
-        classStyle.value = "bg-sand-100 text-jungle-700 border-sand-100 hover:text-sand-100 hover:bg-jungle-700/80 hover:border-jungle-700/80";    
+        classStyle.value = "bg-sand-200 text-jungle-700 border-sand-100 hover:text-sand-100 hover:bg-jungle-700 hover:border-jungle-700";    
         break;
     case "full-jungle":
         classStyle.value = "bg-jungle-800 text-sand-100 border-jungle-800 hover:text-jungle-800 hover:bg-sand-100 hover:border-jungle-800";
@@ -40,7 +40,7 @@ switch (props.theme) {
 <template>
     <div class="">
         <NuxtLink
-            :class="`${classStyle} border text-sm font-bold px-4 py-2 rounded-md inline-flex transition-all duration-300 laptop:text-base`"
+            :class="`${classStyle} border text-sm font-bold px-4 py-2 rounded-md inline-flex transition-all duration-500 ease-smooth laptop:text-base`"
             :to="to"
             :target="target"
             >{{ text }}</NuxtLink
