@@ -6,10 +6,10 @@ export default defineNuxtPlugin(() => {
         content.forEach((element) => {
             //if content is text
             if (element.type === "paragraph") {
-                html += `<p class="mb-3">${renderText(element)}</p>`;
+                html += `<p class="mb-3 text-sm tablet:text-base">${renderText(element)}</p>`;
             }
             if (element.type === "heading") {
-                html += `<h${element.level}>${renderText(element)}</h${element.level}>`;
+                html += `<h${element.level} class="text-2xl font-bold mb-2 tablet:text-3xl">${renderText(element)}</h${element.level}>`;
             }
             if (element.type === "quote") {
                 html += `<blockquote><p>${renderText(element)}</p></blockquote>`;
