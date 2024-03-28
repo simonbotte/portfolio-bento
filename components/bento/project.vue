@@ -12,13 +12,18 @@ const props = defineProps({
         <div class="flex flex-col gap-4 tablet:gap-0">
             <div class="flex flex-col tablet:flex-row tablet:items-center tablet:justify-between">
                 <h3 class="text-2xl font-bold laptop:text-3xl">{{project.name}}</h3>
-                <d class="text-xs">
+                <p class="text-xs">
                     <span v-for="technology in project.technologies" class="text-xs after:content-['-'] after:mx-1 last:after:content-none last:after:mx-0">{{ technology.name.trim() }}</span>
-                </d>
+                </p>
             </div>
             <p class="font-bold text-sm tablet:mb-3 laptop:text-base">{{project.baseline}}</p>
             <p class="text-sm leading-4 laptop:text-base laptop:leading-5">{{project.description}}</p>
         </div>
-        <AppButton :to="`/projets/${project.slug}`" text="En savoir plus" />
+        <div class="flex gap-4">
+            <AppButton v-if="project.sections.length > 0" :to="`/projets/${project.slug}`" text="En savoir plus" />
+            <AppButton v-if="project.link != ''" :to="`${project.link}`" text="Voir le projet" :target="'_blank'" :theme="'border-sand'"/>
+        </div>
+        
+
     </div>
 </template>
