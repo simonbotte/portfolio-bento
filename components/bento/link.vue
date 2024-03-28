@@ -37,7 +37,7 @@ const props = defineProps({
                 </svg>
             </div>
             <div
-                class="w-9 h-9 bg-sand-200/80 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full scale-50 transition-transform duration-300 group-hover:scale-100"
+                class="w-10 h-10 bg-sand-200/40 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full scale-50 transition-transform duration-500 ease-smooth group-hover:scale-100"
             ></div>
         </div>
     </NuxtLink>
