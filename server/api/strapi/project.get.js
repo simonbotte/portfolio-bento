@@ -4,10 +4,27 @@ export default defineEventHandler(async (event) => {
     const slug = event.headers.get('project-slug');
     const strapiUrl = config.STRAPI_URL;
     const strapiToken = config.STRAPI_TOKEN;
-    const response = await $fetch(`${strapiUrl}/api/projects?populate[1]=sections&populate[2]=technologies&populate[3]=sections.image&populate[4]=pictures&filters[slug][$eq]=${slug}`, {
+    const project = await $fetch(`${strapiUrl}/api/projects?populate[1]=technologies&populate[2]=pictures&filters[slug][$eq]=${slug}`, {
         headers: {
             Authorization: `Bearer ${strapiToken}`,
         },
     });
-    return response
+    
+    const nextProject = await $fetch(`${strapiUrl}/api/projects?populate[1]=technologies&filters[order][$gt]=${project.data[0].attributes.order}&sort[0]=order&pagination[page]=1&pagination[pageSize]=1`, {
+        headers: {
+            Authorization: `Bearer ${strapiToken}`,
+        },
+    });
+    const previousProject = await $fetch(`${strapiUrl}/api/projects?populate[1]=technologies&filters[order][$lt]=${project.data[0].attributes.order}&sort[0]=order:desc&pagination[page]=1&pagination[pageSize]=1`, {
+        headers: {
+            Authorization: `Bearer ${strapiToken}`,
+        },
+    });
+    console.log(project.data[0].attributes.order);
+    console.log(previousProject.data);
+    return {
+        project: project,
+        nextProject: nextProject,
+        previousProject: previousProject
+    };
 });
