@@ -2,7 +2,7 @@
 
 <template>
     <div
-        class="bg-sand-800 px-4 py-6 h-bento-mobile-2 row-span-2 col-span-2 tablet:h-bento-tablet-2 tablet:col-span-1 laptop:h-bento-laptop-2 laptop:py-8 rounded-2xl overflow-hidden"
+        class="bg-sand-800 px-4 py-6 h-bento-mobile-2 row-span-2 col-span-2 tablet:h-bento-tablet-2 tablet:col-span-1 laptop:h-bento-laptop-2 laptop:py-8 laptop:px-6 rounded-2xl overflow-hidden"
     >
         <div class="flex gap-2">
             <p class="w-9 shrink-0 text-sm text-right">2024</p>
