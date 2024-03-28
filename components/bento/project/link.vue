@@ -1,18 +1,10 @@
 <script setup>
-const props = defineProps({
-    icon: {
-        type: String,
-        required: true,
-    },
-    title: {
-        type: String,
-        required: true,
-    },
-    link: {
-        type: String,
-        required: true,
-    },
-});
+    const props = defineProps({
+        link: {
+            type: String,
+            required: true,
+        },
+    });
 </script>
 
 <template>
@@ -24,9 +16,9 @@ const props = defineProps({
         class="flex flex-col justify-between p-2 gap-4 bg-sand-800 h-bento-mobile rounded-2xl tablet:p-4 tablet:h-bento-tablet laptop:h-bento-laptop"
     >
         <div class="h-8 shrink-0"></div>
-        <div class="flex flex-col items-center justify-center h-full">
-            <NuxtImg :src="icon" :alt="title" width="52" height="52" class="h-full w-auto max-h-20"/>
-        </div>
+        <p class="flex flex-col items-center justify-center h-full font-bold text-xl tablet:text-3xl">
+            Voir le projet
+        </p>
         <div class="w-8 h-8 flex items-center justify-center shrink-0 relative group">
             <div class="w-full h-full bg-sand-200 flex items-center justify-center rounded-full relative z-10">
                 <svg width="14" height="12" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -37,7 +29,7 @@ const props = defineProps({
                 </svg>
             </div>
             <div
-                class="w-10 h-10 bg-sand-200/40 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full scale-50 transition-transform duration-500 ease-smooth group-hover:scale-100"
+                class="w-9 h-9 bg-sand-200/80 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full scale-50 transition-transform duration-300 group-hover:scale-100"
             ></div>
         </div>
     </NuxtLink>

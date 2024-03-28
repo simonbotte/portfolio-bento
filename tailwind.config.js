@@ -27,6 +27,9 @@ module.exports = {
                 "bento-tablet-2": "30.25rem",
                 "bento-laptop-2": "35.5rem",
             },
+            transitionTimingFunction: {
+                "smooth": "cubic-bezier(0.4, 0, 0.2, 1)",
+            },
         },
 
         colors: {
