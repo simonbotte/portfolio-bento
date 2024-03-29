@@ -17,5 +17,33 @@ useHead({
 
 <template>
     <AppHeader />
-    <NuxtPage class="pt-36 laptop:pt-44" />
+    <NuxtLayout>
+        <NuxtPage class="pt-36 laptop:pt-44" />
+    </NuxtLayout>
 </template>
+
+<style>
+.page-enter-active,
+.page-leave-active {
+    transition: all 300ms;
+}
+
+.page-enter-from,
+.page-leave-to {
+    opacity: 0;
+    filter: blur(4px);
+    transform: scale(0.8);
+}
+
+.project-enter-active,
+.project-leave-active {
+    transition: all 300ms;
+}
+.project-enter-to{
+    transform: translateY(100vh);
+}
+.project-enter-from,
+.project-leave-to {
+    transform: translateY(100vh);
+}
+</style>

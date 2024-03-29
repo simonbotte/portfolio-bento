@@ -5,7 +5,6 @@ const props = defineProps({
         required: true,
     },
 });
-console.log(props.project);
 </script>
 
 <template>
