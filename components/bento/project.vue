@@ -8,7 +8,7 @@ const props = defineProps({
 </script>
 
 <template>
-    <div class="col-span-2 row-span-2 h-bento-mobile-2 bg-sand-800 rounded-2xl p-6 flex flex-col justify-between tablet:h-bento-tablet tablet:row-span-1 laptop:p-8 laptop:h-bento-laptop">
+    <div class="col-span-2 row-span-2 h-bento-mobile-2 bg-sand-800 rounded-2xl p-4 flex flex-col justify-between tablet:h-bento-tablet tablet:row-span-1 laptop:p-6 laptop:h-bento-laptop">
         <div class="flex flex-col gap-4 tablet:gap-0">
             <div class="flex flex-col tablet:flex-row tablet:items-center tablet:justify-between">
                 <h3 class="text-2xl font-bold laptop:text-3xl">{{project.name}}</h3>

@@ -21,7 +21,7 @@ const props = defineProps({
         target="_blank"
         rel="noopener noreferrer"
         :aria-label="title"
-        class="flex flex-col justify-between p-2 gap-4 bg-sand-800 h-bento-mobile rounded-2xl tablet:p-4 tablet:h-bento-tablet laptop:h-bento-laptop"
+        class="flex flex-col justify-between p-4 gap-4 bg-sand-800 h-bento-mobile rounded-2xl tablet:p-4 tablet:h-bento-tablet laptop:h-bento-laptop"
     >
         <div class="h-8 shrink-0"></div>
         <div class="flex flex-col items-center justify-center h-full">

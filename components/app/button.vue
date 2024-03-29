@@ -12,27 +12,26 @@ const props = defineProps({
         type: String,
         default: "_self",
     },
-    theme:{
+    theme: {
         type: String,
-        default:"full-sand"
-    }
+        default: "full-sand",
+    },
 });
-const classStyle = ref("");
+const classButtonStyle = ref("");
+const classHoverStyle = ref("");
 switch (props.theme) {
     case "full-sand":
-        classStyle.value = "bg-sand-200 text-jungle-700 border-sand-100 hover:text-sand-100 hover:bg-jungle-700 hover:border-jungle-700";    
-        break;
-    case "full-jungle":
-        classStyle.value = "bg-jungle-800 text-sand-100 border-jungle-800 hover:text-jungle-800 hover:bg-sand-100 hover:border-jungle-800";
+        classButtonStyle.value =
+            "bg-sand-200 text-sand-800 border-sand-100 group-hover:text-sand-100 group-hover:bg-sand-400 group-hover:border-sand-400";
+            classHoverStyle.value = "bg-sand-400/60"
         break;
     case "border-sand":
-        classStyle.value = " border-sand-100 text-sand-100 hover:text-jungle-700 hover:bg-sand-100 hover:border-sand-100";
-        break;
-    case "border-jungle":
-        classStyle.value = " border-jungle-800 text-jungle-800 hover:text-sand-100 hover:bg-jungle-800 hover:border-jungle-800";
+        classButtonStyle.value =
+            "border-sand-200 text-sand-200 group-hover:text-sand-800 group-hover:bg-sand-200 group-hover:border-sand-200";
+            classHoverStyle.value = "bg-sand-200/60"
         break;
     default:
-        classStyle.value = "bg-sand-100 text-jungle-800 border-sand-100 hover:text-sand-100 hover:bg-jungle-700";
+        classButtonStyle.value = "bg-sand-100 text-jungle-800 border-sand-100 group-hover:text-sand-100 group-hover:bg-jungle-700";
         break;
 }
 </script>
@@ -40,10 +39,13 @@ switch (props.theme) {
 <template>
     <div class="">
         <NuxtLink
-            :class="`${classStyle} border text-sm font-bold px-4 py-2 rounded-md inline-flex transition-all duration-500 ease-smooth laptop:text-base`"
+            :class="`group relative inline-flex`"
             :to="to"
             :target="target"
-            >{{ text }}</NuxtLink
         >
+        
+            <span :class="`${classButtonStyle} border transition-all duration-500 ease-smooth relative z-10 text-sm font-bold px-4 py-2 rounded-md inline-flex laptop:text-base`">{{ text }}</span>
+            <span :class="`transition-all duration-500 ease-smooth absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 ${classHoverStyle} w-full h-full flex rounded-lg opacity-0 pointer-events-none group-hover:w-[calc(100%+0.5rem)] group-hover:h-[calc(100%+0.5rem)] group-hover:opacity-100`"></span>
+        </NuxtLink>
     </div>
 </template>
