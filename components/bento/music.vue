@@ -50,18 +50,21 @@ const getRecentPlayed = async () => {
     return data.value.data[0];
 };
 const lastPlayedMusic = await getRecentPlayed();
+const musicBento = ref(null);
 onMounted(async () => {
     // console.log("MusicKit is ready not event");
     // document.addEventListener("musickitloaded", async function () {
     //     await loadMusic();
     // });
     // await loadMusic();
+    useApparitionAnimation(musicBento.value);
 });
 </script>
 
 <template>
     <div
-        class="bg-sand-800 p-4 h-bento-mobile-1 flex flex-col gap-2 justify-between rounded-2xl overflow-hidden h-bento-mobile tablet:p-4 tablet:h-bento-tablet laptop:p-6 laptop:h-bento-laptop"
+    ref="musicBento"
+        class=" bg-sand-800 p-4 h-bento-mobile-1 flex flex-col gap-2 justify-between rounded-2xl overflow-hidden h-bento-mobile tablet:p-4 tablet:h-bento-tablet laptop:p-6 laptop:h-bento-laptop"
     >
         <div class="">
             <NuxtImg
