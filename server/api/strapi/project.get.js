@@ -20,8 +20,6 @@ export default defineEventHandler(async (event) => {
             Authorization: `Bearer ${strapiToken}`,
         },
     });
-    console.log(project.data[0].attributes.order);
-    console.log(previousProject.data);
     return {
         project: project,
         nextProject: nextProject,

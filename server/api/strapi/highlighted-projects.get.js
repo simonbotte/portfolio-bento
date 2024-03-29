@@ -7,6 +7,5 @@ export default defineEventHandler(async (event) => {
             Authorization: `Bearer ${strapiToken}`,
         },
     });
-    console.log(response);
     return response
 });
