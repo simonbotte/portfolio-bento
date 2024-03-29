@@ -5,7 +5,6 @@ const { data: projectsData } = await useFetch(apiUrl, {
 });
 const projects = ref(projectsData.value?.data);
 
-console.log(projects);
 </script>
 
 <template>

@@ -1,4 +1,10 @@
 <script setup>
+definePageMeta({    
+    pageTransition: {
+        name: "project",
+        mode: "out-in",
+    },
+});
 const config = useRuntimeConfig();
 const apiHost = config.public.STRAPI_URL;
 const route = useRoute();
@@ -24,7 +30,7 @@ if (project.value == null) {
 <template>
     <section
         v-if="project?.attributes != undefined"
-        class="w-full max-w-mobile px-4 m-auto pb-8 flex flex-col gap-4 tablet:max-w-tablet laptop:max-w-laptop"
+        class="w-full max-w-mobile px-4 m-auto pb-8 flex flex-col gap-4 translate-y-0 duration-300 tablet:max-w-tablet laptop:max-w-laptop"
     >
         <div class="grid grid-cols-1 gap-4 tablet:grid-cols-2 relative laptop:grid-cols-3 laptop:items-start">
             <div class="flex flex-col gap-4 tablet:sticky tablet:h-fit tablet:top-36 laptop:top-44">
@@ -61,7 +67,7 @@ if (project.value == null) {
                         :to="`/projets/${previousProject.attributes.slug}`"
                         class="text-sand-100 text-sm font-bold flex items-center gap-2"
                     >
-                    <AppIcon name="arrow-left" class="text-sand-100 h-4 w-4" />
+                        <AppIcon name="arrow-left" class="text-sand-100 h-4 w-4" />
                         <span class="flex flex-col">
                             <span>Projet précédent</span>
                             <span class="text-xs">({{ previousProject.attributes.name }})</span>
