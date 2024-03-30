@@ -40,10 +40,10 @@ useHead({
     transition: all 300ms;
 }
 .project-enter-to{
-    transform: translateY(100vh);
+    transform: translateY(100%);
 }
 .project-enter-from,
 .project-leave-to {
-    transform: translateY(100vh);
+    transform: translateY(100%);
 }
 </style>
