@@ -8,6 +8,59 @@ useHead({
             content:
                 "Développeur web full-stack, je suis spécialisé dans la création de sites web et d'applications web. Je suis basé à Bordeaux, France.",
         },
+        {
+            name:"apple-mobile-web-app-title",
+            content:"Simon Botté | Portfolio"
+        },
+        {
+            name:"application-name",
+            content:"Simon Botté | Portfolio"
+        },
+        {
+            name:"msapplication-TileColor",
+            content:"#da532c"
+        },
+        {
+            name:"theme-color",
+            content:"#ffffff"
+        },
+    ],
+    link: [
+        {
+            rel: "apple-touch-icon",
+            sizes: "180x180",
+            href: "/apple-touch-icon.png?v=2",
+        },
+        {
+            rel: "icon",
+            type: "image/png",
+            sizes: "32x32",
+            href: "/favicon-32x32.png?v=2",
+        },
+        {
+            rel: "icon",
+            type: "image/png",
+            sizes: "16x16",
+            href: "/favicon-16x16.png?v=2",
+        },
+        {
+            rel: "manifest",
+            href: "/site.webmanifest?v=2",
+        },
+        {
+            rel: "mask-icon",
+            href: "/safari-pinned-tab.svg?v=2",
+            color: "#5bbad5",
+        },
+        {
+            rel: "shortcut icon",
+            href: "/favicon.ico?v=2",
+        },
+        {
+            rel: "mask-icon",
+            href: "/safari-pinned-tab.svg?v=2",
+            color: "#5bbad5",
+        },
     ],
     bodyAttrs: {
         class: "bg-jungle-900 text-sand-100 antialiased",
@@ -39,7 +92,7 @@ useHead({
 .project-leave-active {
     transition: all 300ms;
 }
-.project-enter-to{
+.project-enter-to {
     transform: translateY(100%);
 }
 .project-enter-from,

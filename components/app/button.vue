@@ -25,6 +25,11 @@ switch (props.theme) {
             "bg-sand-200 text-sand-800 border-sand-100 group-hover:text-sand-100 group-hover:bg-sand-500 group-hover:border-sand-500";
         classHoverStyle.value = "bg-sand-500/60";
         break;
+    case "full-sand-dark":
+        classButtonStyle.value =
+            "bg-sand-800 text-sand-100 border-sand-800 group-hover:text-sand-100 group-hover:bg-sand-500 group-hover:border-sand-500";
+        classHoverStyle.value = "bg-sand-500/60";
+        break;
     case "border-sand":
         classButtonStyle.value =
             "border-sand-200 text-sand-200 group-hover:text-sand-100 group-hover:bg-sand-500 group-hover:border-sand-500";

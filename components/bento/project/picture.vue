@@ -18,9 +18,9 @@ const props = defineProps({
 
 <template>
     <div
-        :class="`relative ${size == 'small' ? 'col-span-1 h-bento-mobile':'col-span-2 h-bento-mobile-2'} aspect-square rounded-2xl flex flex-col justify-between  w-fit`"
+        :class="`relative ${size == 'small' ? 'col-span-1 h-bento-mobile':'col-span-2 h-bento-mobile-2'} aspect-square rounded-2xl flex flex-col justify-between w-full p-4`"
     >
-        <BentoProjectPictureBackground class="absolute w-full h-full top-0 left-0 rounded-2xl" />
-        <NuxtImg :alt="alt" :src="src" class="relative z-10 p-4 rounded-2xl h-full object-contain w-full " />
+        <BentoPictureBackground class="absolute w-full h-full top-0 left-0 rounded-2xl" />
+        <NuxtImg :alt="alt" :src="src" class="relative z-10 rounded-2xl h-full object-contain w-full " />
     </div>
 </template>
