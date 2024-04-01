@@ -6,7 +6,7 @@ export default defineNuxtPlugin(() => {
         content.forEach((element) => {
             //if content is text
             if (element.type === "paragraph") {
-                html += `<p class="mb-3 text-sm tablet:text-base">${renderText(element)}</p>`;
+                html += `<p class="mb-3 text-sm last:mb-0 tablet:text-base">${renderText(element)}</p>`;
             }
             if (element.type === "heading") {
                 html += `<h${element.level} class="text-2xl font-bold mb-2 tablet:text-3xl">${renderText(element)}</h${element.level}>`;

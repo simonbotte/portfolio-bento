@@ -46,7 +46,7 @@ if (project.value == null) {
             </div>
 
             <div
-                class="grid grid-cols-2 w-auto max-w-mobile m-auto gap-4 tablet:col-start-2 tablet:row-start-2 tablet:ml-0 laptop:col-start-auto laptop:row-start-auto laptop:sticky laptop:top-44 laptop:h-fit laptop:mr-0 laptop:ml-auto laptop:my-0"
+                class="grid grid-cols-2 w-auto max-w-mobile m-auto gap-4 tablet:col-start-2 tablet:row-start-2 tablet:ml-0 laptop:col-start-auto laptop:row-start-auto laptop:sticky laptop:top-44 laptop:h-fit laptop:mr-0 laptop:my-0 laptop:ml-auto laptop:max-w-full"
             >
                 <BentoProjectPicture
                     v-for="(picture, i) in project.attributes.pictures.data"
@@ -56,7 +56,7 @@ if (project.value == null) {
                             ? apiHost + picture.attributes.formats.medium.url
                             : apiHost + picture.attributes.formats.small.url
                     "
-                    class="max-w-full"
+                    class="w-full shrink-0"
                     :size="project.attributes.pictures.data.length == 3 && i == 2 ? 'large' : 'small'"
                 />
             </div>

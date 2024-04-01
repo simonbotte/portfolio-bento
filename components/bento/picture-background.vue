@@ -4,9 +4,10 @@
         version="1.1"
         xmlns:xlink="http://www.w3.org/1999/xlink"
         xmlns:svgjs="http://svgjs.dev/svgjs"
-        viewBox="0 0 700 700"
-        width="700"
-        height="700"
+        viewBox="0 0 800 800"
+        width="800"
+        height="800"
+        class="pointer-events-none h-full w-full"
     >
         <defs>
             <linearGradient
@@ -111,7 +112,7 @@
                 ></feColorMatrix>
             </filter>
         </defs>
-        <g filter="url(#gggrain-saturate)">
+        <g filter="url(#gggrain-saturate)" class="h-full w-full">
             <rect width="100%" height="100%" fill="#a7b4ab"></rect>
             <rect width="100%" height="100%" fill="url(#gggrain-gradient3)"></rect>
             <rect width="100%" height="100%" fill="url(#gggrain-gradient2)"></rect>
