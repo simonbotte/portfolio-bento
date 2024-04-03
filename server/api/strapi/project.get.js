@@ -4,7 +4,7 @@ export default defineEventHandler(async (event) => {
     const slug = event.headers.get('project-slug');
     const strapiUrl = config.STRAPI_URL;
     const strapiToken = config.STRAPI_TOKEN;
-    const project = await $fetch(`${strapiUrl}/api/projects?populate[1]=technologies&populate[2]=pictures&filters[slug][$eq]=${slug}`, {
+    const project = await $fetch(`${strapiUrl}/api/projects?populate[1]=technologies&populate[2]=pictures&populate[3]=ogImage&filters[slug][$eq]=${slug}`, {
         headers: {
             Authorization: `Bearer ${strapiToken}`,
         },

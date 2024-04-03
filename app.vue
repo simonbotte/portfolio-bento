@@ -1,28 +1,49 @@
 <script setup>
 useHead({
-    title: "Simon Botté | Développeur web full-stack | Portfolio",
     meta: [
         {
-            hid: "description",
-            name: "description",
-            content:
-                "Développeur web full-stack, je suis spécialisé dans la création de sites web et d'applications web. Je suis basé à Bordeaux, France.",
+            name: "apple-mobile-web-app-title",
+            content: "Simon Botté | Portfolio",
         },
         {
-            name:"apple-mobile-web-app-title",
-            content:"Simon Botté | Portfolio"
+            name: "application-name",
+            content: "Simon Botté | Portfolio",
         },
         {
-            name:"application-name",
-            content:"Simon Botté | Portfolio"
+            name: "msapplication-TileColor",
+            content: "#da532c",
         },
         {
-            name:"msapplication-TileColor",
-            content:"#da532c"
+            name: "theme-color",
+            content: "#ffffff",
         },
         {
-            name:"theme-color",
-            content:"#ffffff"
+            name: "robots",
+            content: "index, follow",
+        },
+        {
+            name: "googlebot",
+            content: "index, follow",
+        },
+        {
+            name: "google-site-verification",
+            content: "RvrIwIVpeiE6JCQchWjMyoajKEqSTJFmSRCFCqLYfy0",
+        },
+        {
+            name: "og:type",
+            content: "website",
+        },
+        {
+            name: "og:url",
+            content: "https://simonbotte.fr",
+        },
+        {
+            name: "twitter:card",
+            content: "summary_large_image",
+        },
+        {
+            name: "twitter:url",
+            content: "https://simonbotte.fr",
         },
     ],
     link: [
