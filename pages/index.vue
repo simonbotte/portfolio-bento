@@ -1,10 +1,56 @@
 <script setup>
+useHead({
+    title: "Simon Botté | Développeur web full-stack | Portfolio",
+    meta: [
+        {
+            hid: "description",
+            name: "description",
+            content:
+                "Développeur web full-stack, je suis spécialisé dans la création de sites web et d'applications web. Je suis basé à Bordeaux, France.",
+        },
+        {
+            name: "title",
+            content: "Simon Botté | Développeur web full-stack | Portfolio",
+        },
+        {
+            name: "description",
+            content:
+                "Je suis Simon Botté et bienvenu sur mon portfolio. Explorez mes projets de développement web full-stack (front et back) avec mon portfolio bento",
+        },
+        {
+            name: "og:title",
+            content: "Simon Botté | Développeur web full-stack | Portfolio",
+        },
+        {
+            name: "og:description",
+            content:
+                "Je suis Simon Botté et bienvenu sur mon portfolio. Explorez mes projets de développement web full-stack (front et back) avec mon portfolio bento",
+        },
+        {
+            name: "og:image",
+            content: "https://simonbotte.fr/og-images/home.jpg",
+        },
+        {
+            name: "twitter:title",
+            content: "Simon Botté | Développeur web full-stack | Portfolio",
+        },
+        {
+            name: "twitter:description",
+            content:
+                "Je suis Simon Botté et bienvenu sur mon portfolio. Explorez mes projets de développement web full-stack (front et back) avec mon portfolio bento",
+        },
+        {
+            name: "twitter:image",
+            content: "https://simonbotte.fr/og-images/home.jpg",
+        },
+    ],
+});
+
 const apiUrl = `/api/strapi/highlighted-projects/`;
 const { data: projectsData } = await useFetch(apiUrl, {
     method: "GET",
 });
 const projects = ref(projectsData.value?.data);
-
 </script>
 
 <template>
@@ -20,10 +66,13 @@ const projects = ref(projectsData.value?.data);
         />
         <LazyBentoMusic />
         <BentoAbout class="tablet:row-start-2" />
-        <BentoProject :project="projects[0].attributes"/>
+        <BentoProject :project="projects[0].attributes" />
         <BentoJourney class="tablet:col-start-3 tablet:row-start-3 laptop:col-start-1 laptop:row-start-2" />
         <BentoLink :title="'LinkedIn'" :icon="'/icons/linkedin.svg'" :link="'https://apple.com'" />
         <BentoLink :title="'LinkedIn'" :icon="'/icons/linkedin.svg'" :link="'https://apple.com'" />
-        <BentoProject class="tablet:col-start-2 tablet:row-start-5 laptop:col-start-2 laptop:row-start-4" :project="projects[1].attributes"/>
+        <BentoProject
+            class="tablet:col-start-2 tablet:row-start-5 laptop:col-start-2 laptop:row-start-4"
+            :project="projects[1].attributes"
+        />
     </section>
 </template>
