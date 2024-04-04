@@ -94,6 +94,7 @@ useHead({
     <NuxtLayout>
         <NuxtPage class="pt-36 laptop:pt-44" />
     </NuxtLayout>
+    <AppFooter />
 </template>
 
 <style>

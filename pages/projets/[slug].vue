@@ -72,7 +72,7 @@ if (project.value == null) {
 <template>
     <section
         v-if="project?.attributes != undefined"
-        class="w-full max-w-mobile px-4 m-auto pb-8 flex flex-col gap-4 translate-y-0 duration-300 tablet:max-w-tablet laptop:max-w-laptop"
+        class="w-full max-w-mobile px-4 m-auto pb-20 flex flex-col gap-4 translate-y-0 duration-300 tablet:max-w-tablet laptop:max-w-laptop"
     >
         <div class="grid grid-cols-1 gap-4 tablet:grid-cols-2 relative laptop:grid-cols-3 laptop:items-start">
             <div class="flex flex-col gap-4 tablet:sticky tablet:h-fit tablet:top-36 laptop:top-44">
