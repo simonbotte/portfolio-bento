@@ -55,7 +55,7 @@ const projects = ref(projectsData.value?.data);
 
 <template>
     <section
-        class="grid grid-cols-2 w-full max-w-mobile px-4 m-auto gap-4 pb-8 tablet:max-w-tablet tablet:grid-cols-3 laptop:max-w-laptop laptop:grid-cols-4 laptop:gap-8"
+        class="grid grid-cols-2 w-full max-w-mobile px-4 m-auto gap-4 pb-20 tablet:max-w-tablet tablet:grid-cols-3 laptop:max-w-laptop laptop:grid-cols-4 laptop:gap-8"
     >
         <BentoHi class="col-span-2 h-bento-mobile tablet:h-bento-tablet laptop:h-bento-laptop" />
         <BentoProjects class="col-span-1" />
