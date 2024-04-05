@@ -19,7 +19,7 @@ export default defineNuxtPlugin(() => {
                     html += `<ol>`;
                 }
                 if (element.format === "unordered") {
-                    html += `<ul>`;
+                    html += `<ul class="mb-4">`;
                 }
                 element.children.forEach((child) => {
                     html += `<li>${renderText(child)}</li>`;
@@ -76,7 +76,7 @@ export default defineNuxtPlugin(() => {
                 }
             }
             if (child.type === "link") {
-                text += `<a href="${child.url}">`;
+                text += `<a href="${child.url}" class="underline">`;
                 child.children.forEach((grandchild) => {
                     if (grandchild.type === "text") {
                         text += grandchild.text;

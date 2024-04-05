@@ -8,7 +8,7 @@
             <nav class="flex flex-col gap-4">
                 <ul class="flex gap-4">
                     <li><nuxt-link class="text-sm laptop:text-base" to="/projets">Projets</nuxt-link></li>
-                    <li><nuxt-link class="text-sm laptop:text-base" to="/projets">Mentions légales</nuxt-link></li>
+                    <li><nuxt-link class="text-sm laptop:text-base" to="/mentions-legales">Mentions légales</nuxt-link></li>
                 </ul>
             </nav>
         </div>
