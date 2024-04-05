@@ -23,7 +23,7 @@ onMounted(() => {
         <BentoAboutStack class="tablet:col-start-2 tablet:row-start-3" />
         <BentoJourney class="tablet:row-start-1" />
         <div
-            class="flex flex-col gap-8 col-span-2 row-span-2 table:col-span-1 tablet:col-start-3 tablet:row-start-1 tablet:row-end-10 laptop:row-end-3"
+            class="flex flex-col gap-6 col-span-2 row-span-2 table:col-span-1 tablet:col-start-3 tablet:row-start-1 tablet:row-end-10 laptop:row-end-3"
         >
             <AboutContent :content="$rcTranslator(content.attributes.introduction)" class="" />
             <AboutContent :content="$rcTranslator(content.attributes.plans)" class="" />
