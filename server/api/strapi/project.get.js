@@ -10,12 +10,12 @@ export default defineEventHandler(async (event) => {
         },
     });
     
-    const nextProject = await $fetch(`${strapiUrl}/api/projects?populate[1]=technologies&filters[order][$gt]=${project.data[0].attributes.order}&sort[0]=order&pagination[page]=1&pagination[pageSize]=1`, {
+    const nextProject = await $fetch(`${strapiUrl}/api/projects?populate[1]=technologies&populate[2]=content&filters[order][$gt]=${project.data[0].attributes.order}&sort[0]=order&pagination[page]=1&pagination[pageSize]=1`, {
         headers: {
             Authorization: `Bearer ${strapiToken}`,
         },
     });
-    const previousProject = await $fetch(`${strapiUrl}/api/projects?populate[1]=technologies&filters[order][$lt]=${project.data[0].attributes.order}&sort[0]=order:desc&pagination[page]=1&pagination[pageSize]=1`, {
+    const previousProject = await $fetch(`${strapiUrl}/api/projects?populate[1]=technologies&populate[2]=content&filters[order][$lt]=${project.data[0].attributes.order}&sort[0]=order:desc&pagination[page]=1&pagination[pageSize]=1`, {
         headers: {
             Authorization: `Bearer ${strapiToken}`,
         },

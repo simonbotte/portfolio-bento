@@ -105,7 +105,7 @@ if (project.value == null) {
             <div class="tablet:row-start-3 tablet:col-start-2 flex justify-between">
                 <div>
                     <NuxtLink
-                        v-if="previousProject != undefined"
+                        v-if="previousProject != undefined && previousProject.attributes.content?.length > 0"
                         :to="`/projets/${previousProject.attributes.slug}`"
                         class="text-sand-100 text-sm font-bold flex items-center gap-2"
                     >
@@ -118,7 +118,7 @@ if (project.value == null) {
                 </div>
                 <div>
                     <NuxtLink
-                        v-if="nextProject != undefined"
+                        v-if="nextProject != undefined && nextProject.attributes.content?.length > 0"
                         :to="`/projets/${nextProject.attributes.slug}`"
                         class="text-sand-100 text-sm font-bold flex items-center gap-2"
                     >
