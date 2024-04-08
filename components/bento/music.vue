@@ -40,7 +40,7 @@ onMounted(async () => {
         ref="musicBento"
         class="musicBento bg-sand-800 p-4 h-bento-mobile-1 flex flex-col gap-2 justify-between rounded-2xl overflow-hidden h-bento-mobile tablet:p-4 tablet:h-bento-tablet laptop:p-6 laptop:h-bento-laptop"
     >
-        <div class="card-container relative w-8 h-8 tablet:w-9 tablet:h-9 laptop:w-10 laptop:h-10">
+        <div class="card-container relative w-8 h-8 tablet:w-10 tablet:h-10 laptop:w-12 laptop:h-12">
             <div class="card absolute w-full h-full ease-smooth duration-300">
                 <NuxtImg
                     src="/icons/appleMusic.svg"
