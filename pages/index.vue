@@ -68,8 +68,8 @@ const projects = ref(projectsData.value?.data);
         <BentoAbout class="tablet:row-start-2" />
         <BentoProject :project="projects[0].attributes" />
         <BentoJourney class="tablet:col-start-3 tablet:row-start-3 laptop:col-start-1 laptop:row-start-2" />
-        <BentoLink :title="'LinkedIn'" :icon="'/icons/linkedin.svg'" :link="'https://apple.com'" />
-        <BentoLink :title="'LinkedIn'" :icon="'/icons/linkedin.svg'" :link="'https://apple.com'" />
+        <BentoLink :title="'LinkedIn'" :icon="'/icons/linkedin.svg'" :link="'https://www.linkedin.com/in/simon-botte-530938175/'" />
+        <BentoLink :title="'GitHub'" :icon="'/icons/github.svg'" :link="'https://github.com/simonbotte'" />
         <BentoProject
             class="tablet:col-start-2 tablet:row-start-5 laptop:col-start-2 laptop:row-start-4"
             :project="projects[1].attributes"

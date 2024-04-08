@@ -19,7 +19,7 @@ const toggleMenu = () => {
                 <ul class="flex flex-col gap-4 tablet:flex-row ">
                     <li><nuxt-link class="text-xl" to="/a-propos">À propos</nuxt-link></li>
                     <li><nuxt-link class="text-xl" to="/projets">Projets</nuxt-link></li>
-                    <li><nuxt-link class="text-xl" to="/">Contact</nuxt-link></li>
+                    <li><nuxt-link class="text-xl" to="/contact">Contact</nuxt-link></li>
                 </ul>
             </nav>
         </div>

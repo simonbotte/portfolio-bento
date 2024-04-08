@@ -31,7 +31,7 @@ onMounted(() => {
         >
             <div class="h-8 shrink-0"></div>
             <div class="flex flex-col items-center justify-center h-full">
-                <NuxtImg :src="icon" :alt="title" width="52" height="52" class="h-full w-auto max-h-20" />
+                <NuxtImg :src="icon" :alt="title" width="52" height="52" class="h-full w-auto max-h-12 tablet:max-h-20 laptop:max-h-28" />
             </div>
             <div class="w-8 h-8 flex items-center justify-center shrink-0 relative group">
                 <div class="w-full h-full bg-sand-200 flex items-center justify-center rounded-full relative z-10">
