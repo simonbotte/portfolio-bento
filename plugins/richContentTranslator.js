@@ -13,7 +13,7 @@ export default defineNuxtPlugin(() => {
                 if (element.level === 1) {
                     html += `class="text-2xl font-bold mb-2 tablet:text-3xl">`;
                 } else {
-                    html += `text-xl font-bold mb-2 tablet:text-2xl">`;
+                    html += `class="text-xl font-bold mb-2 tablet:text-2xl">`;
                 }
                 html += `${renderText(element)}</h${element.level}>`;
             }
