@@ -1,0 +1,50 @@
+name: Build And Deploy
+
+on:
+  # Runs on pushes targeting the default branch
+  push:
+    branches: ["main"]
+
+env:
+  ENV: production
+  APPLE_TEAM_ID: ${{secrets.APPLE_TEAM_ID}}
+  APPLE_KEY_ID: ${{secrets.APPLE_KEY_ID}}
+  APPLE_PRIVATE_KEY: ${{secrets.APPLE_PRIVATE_KEY}}
+  APPLE_USER_TOKEN: ${{secrets.APPLE_USER_TOKEN}}
+  STRAPI_URL: ${{secrets.STRAPI_URL}}
+  STRAPI_TOKEN: ${{secrets.STRAPI_TOKEN}}
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: checkout
+              uses: actions/checkout@v1
+
+            - name: build
+              run: npm install && npm run build
+
+            - name: Copy repository contents via scp
+              uses: appleboy/scp-action@master
+              with:
+                  host: ${{ secrets.HOST }}
+                  username: ${{ secrets.USERNAME }}
+                  port: ${{ secrets.PORT }}
+                  key: ${{ secrets.SSHKEY }}
+                  source: ".output/public, .output/server, .output/nitro.json"
+                  target: ${{ secrets.TARGET }}
+
+            - name: Executing remote command
+              uses: appleboy/ssh-action@master
+              with:
+                  host: ${{ secrets.HOST }}
+                  USERNAME: ${{ secrets.USERNAME }}
+                  PORT: ${{ secrets.PORT }}
+                  KEY: ${{ secrets.SSHKEY }}
+                  script: |
+                    cd ${{secrets.TARGET}}
+                    rm -r public
+                    rm -r server
+                    mv -f .output/* .
+                    curl -X POST --basic --user "${{ secrets.AD_API_KEY }} account=${{ secrets.USERNAME }}:" https://api.alwaysdata.com/v1/site/${{ secrets.AD_SITE_ID }}/restart/
