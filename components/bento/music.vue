@@ -48,7 +48,7 @@ onMounted(async () => {
                     class="card-img card-img-front shrink-0 w-full absolute top-0 left-0"
                 />
                 <NuxtLink :to="lastPlayedMusic.data[0].attributes.url" target="_blank" class="card-img card-img-back absolute top-0 left-0 w-full h-full">
-                    <NuxtImg :src="getArtworkUrl(lastPlayedMusic.data[0].attributes.artwork.url)" class="w-full h-full object-cover rounded-md"></NuxtImg>
+                    <NuxtImg :src="getArtworkUrl(lastPlayedMusic.data[0].attributes.artwork.url)" class="w-full h-full object-cover rounded-md" :alt="`Artwork de ${lastPlayedMusic.data[0].attributes.name}`"></NuxtImg>
                 </NuxtLink>
                 
             </div>

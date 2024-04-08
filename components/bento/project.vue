@@ -20,7 +20,7 @@ onMounted(() => {
     >
         <div class="flex flex-col gap-4 tablet:gap-0">
             <div class="flex flex-col tablet:flex-row tablet:items-center tablet:justify-between">
-                <h2 class="text-2xl font-bold laptop:text-3xl">{{ project.name }}</h2>
+                <h3 class="text-2xl font-bold laptop:text-3xl">{{ project.name }}</h3>
 
                 <p class="text-xs">
                     <span
