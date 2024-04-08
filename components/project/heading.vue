@@ -20,6 +20,7 @@ const props = defineProps({
             </p>
         </div>
         <div class="flex flex-col gap-1">
+            <p v-if="project.close" class="text-sm">Arrêté</p>
             <p class="text-sm font-bold tablet:text-base">{{ project.baseline }}</p>
             <p class="text-sm leading-5 tablet:text-base">{{ project.description }}</p>
         </div>

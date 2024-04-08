@@ -37,7 +37,7 @@ onMounted(() => {
         <div class="flex gap-4">
             <AppButton v-if="project.content?.length > 0" :to="`/projets/${project.slug}`" text="En savoir plus" />
             <AppButton
-                v-if="project.link != ''"
+                v-else-if="project.link != ''"
                 :to="`${project.link}`"
                 text="Voir le projet"
                 :target="'_blank'"

@@ -5,6 +5,9 @@ const { data: projectsData } = await useFetch(apiUrl, {
 });
 const content = ref(projectsData.value?.data);
 const buttonCV = ref(false);
+const config = useRuntimeConfig();
+const apiHost = config.public.STRAPI_URL;
+
 onMounted(() => {
     useApparitionAnimation(buttonCV.value);
 });
@@ -16,7 +19,7 @@ onMounted(() => {
     >
         <BentoAboutShort />
         <BentoPicture
-            src="/images/suricate.jpeg"
+            :src="apiHost + content.attributes.picture.data.attributes.formats.large.url"
             alt="Photo d'un suricate"
             class="tablet:col-start-1 tablet:row-start-2"
         />
@@ -28,14 +31,14 @@ onMounted(() => {
             <AboutContent :content="$rcTranslator(content.attributes.introduction)" class="" />
             <AboutContent :content="$rcTranslator(content.attributes.plans)" class="" />
             <div ref="buttonCV">
-                <AppButton text="Télécharger mon CV" to="/a-propos" class="col-span-2" />
+                <AppButton text="Télécharger mon CV" target="_blanc" :to="apiHost + content.attributes.cv.data.attributes.url" class="col-span-2" />
             </div>
             
             <AboutContent :content="$rcTranslator(content.attributes.passions)" class="" />
         </div>
-        <div class="grid grid-cols-2 gap-4 w-full col-span-2 laptop:row-start-3">
-            <BentoLink :title="'LinkedIn'" :icon="'/icons/linkedin.svg'" :link="'https://apple.com'" />
-            <BentoLink :title="'LinkedIn'" :icon="'/icons/linkedin.svg'" :link="'https://apple.com'" />
+        <div class="grid grid-cols-2 gap-4 w-full col-span-2 laptop:row-start-3 laptop:gap-8">
+            <BentoLink :title="'LinkedIn'" :icon="'/icons/linkedin.svg'" :link="'https://www.linkedin.com/in/simon-botte-530938175/'" />
+            <BentoLink :title="'GitHub'" :icon="'/icons/github.svg'" :link="'https://github.com/simonbotte'" />
         </div>
     </section>
 </template>

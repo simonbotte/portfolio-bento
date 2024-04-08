@@ -29,7 +29,6 @@ const musicBento = ref(null);
 const getArtworkUrl = (url) => {
     return url.replace("{w}", "100").replace("{h}", "100");
 };
-console.log(getArtworkUrl(lastPlayedMusic.value.data[0].attributes.artwork.url));
 onMounted(async () => {
     useApparitionAnimation(musicBento.value);
 });
