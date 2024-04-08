@@ -41,7 +41,7 @@ useHead({
         },
         {
             name: "twitter:image",
-            content: "https://simonbotte.fr/og-images/home.jpg",
+            content: "https://pre.simonbotte.fr/og-images/home.jpg",
         },
     ],
 });

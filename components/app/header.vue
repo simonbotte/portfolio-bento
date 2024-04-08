@@ -14,7 +14,7 @@ const toggleMenu = () => {
                 <span :class="`w-6 bg-sand-100 h-0.5 block rounded transition-all duration-300 my-0.5 ${isOpen ? 'opacity-0':''}`"></span>
                 <span :class="`w-6 bg-sand-100 h-0.5 block rounded transition-all duration-300 ${isOpen ? '-rotate-45 -translate-y-1':'translate-y-0.5'}`"></span>
             </div>
-            <NuxtLink to="/"><h1 class="font-bold text-sand-100 text-4xl">Simon Botté</h1></NuxtLink>
+            <NuxtLink to="/"><p class="font-bold text-sand-100 text-4xl">Simon Botté</p></NuxtLink>
             <nav :class="`block left-0  absolute bottom-0 w-full p-4 rounded-b-2xl bg-jungle-700/80 transition-all  duration-300 tablet:relative tablet:block tablet:w-fit tablet:opacity-100 tablet:bg-transparent tablet:flex-row tablet:p-0 tablet:translate-y-0 tablet:bottom-auto tablet:pointer-events-auto${isOpen ?' translate-y-full opacity-100':' pointer-events-none translate-y-3/4 opacity-0'}`">
                 <ul class="flex flex-col gap-4 tablet:flex-row ">
                     <li><nuxt-link class="text-xl" to="/a-propos">À propos</nuxt-link></li>

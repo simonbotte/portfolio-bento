@@ -9,7 +9,13 @@ export default defineNuxtPlugin(() => {
                 html += `<p class="mb-3 text-sm last:mb-0 tablet:text-base">${renderText(element)}</p>`;
             }
             if (element.type === "heading") {
-                html += `<h${element.level} class="text-2xl font-bold mb-2 tablet:text-3xl">${renderText(element)}</h${element.level}>`;
+                html += `<h${element.level} `;
+                if (element.level === 1) {
+                    html += `class="text-2xl font-bold mb-2 tablet:text-3xl">`;
+                } else {
+                    html += `text-xl font-bold mb-2 tablet:text-2xl">`;
+                }
+                html += `${renderText(element)}</h${element.level}>`;
             }
             if (element.type === "quote") {
                 html += `<blockquote><p>${renderText(element)}</p></blockquote>`;
