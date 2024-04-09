@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /dist/
+
+Sitemap: https://simonbotte.fr/sitemap.xml
