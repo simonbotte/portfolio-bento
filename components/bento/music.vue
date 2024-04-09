@@ -10,11 +10,10 @@ userToken.value = dataUserToken.value.userToken;
 const musicUrl = ref(`https://api.music.apple.com/v1`);
 
 const music = ref(null);
-
+const lastPlayedMusicData = ref(false);
+const pending = ref(true);
 const {
-    data: lastPlayedMusic,
-    pending,
-    error,
+    data
 } = await useFetch(musicUrl.value + "/me/recent/played/tracks?limit=5", {
     headers: {
         Authorization: `Bearer ${token.value}`,
@@ -22,12 +21,17 @@ const {
     },
     method: "GET",
     lazy: true,
+    onResponse: (response) => {
+        lastPlayedMusicData.value = response.response._data.data[0];
+        pending.value = false;
+    },
 });
 
 const musicBento = ref(null);
-const lastPlayedMusicData = ref(lastPlayedMusic.value.data[0]);
 const getArtworkUrl = (url) => {
-    return url.replace("{w}", "100").replace("{h}", "100");
+    if(url != undefined){
+        return url.replace("{w}", "100").replace("{h}", "100");
+    }
 };
 onMounted(async () => {
     useApparitionAnimation(musicBento.value);
@@ -47,8 +51,8 @@ onMounted(async () => {
                     :width="36"
                     class="card-img card-img-front shrink-0 w-full absolute top-0 left-0"
                 />
-                <NuxtLink :to="lastPlayedMusicData.attributes.url" target="_blank" class="card-img card-img-back absolute top-0 left-0 w-full h-full">
-                    <NuxtImg :src="getArtworkUrl(lastPlayedMusicData.attributes.artwork.url)" class="w-full h-full object-cover rounded-md" :alt="`Artwork de ${lastPlayedMusicData.attributes.name}`"></NuxtImg>
+                <NuxtLink v-if="pending == false" :to="lastPlayedMusicData?.attributes?.url" target="_blank" class="card-img card-img-back absolute top-0 left-0 w-full h-full">
+                    <NuxtImg :src="getArtworkUrl(lastPlayedMusicData?.attributes?.artwork.url)" class="w-full h-full object-cover rounded-md" :alt="`Artwork de ${lastPlayedMusicData?.attributes?.name}`"></NuxtImg>
                 </NuxtLink>
                 
             </div>
@@ -59,14 +63,14 @@ onMounted(async () => {
                 <div v-if="pending == false" class="flex flex-col gap-1">
                     <h3
                         class="text-sand-100 leading-4 text-sm font-bold max-h-8 overflow-hidden tablet:text-lg tablet:leading-5 tablet:max-h-14"
-                        :data-full-name="lastPlayedMusicData.attributes.name"
+                        :data-full-name="lastPlayedMusicData?.attributes?.name"
                     >
-                        <NuxtLink :to="lastPlayedMusicData.attributes.url" target="_blank">{{
-                            lastPlayedMusicData.attributes.name
+                        <NuxtLink :to="lastPlayedMusicData?.attributes?.url" target="_blank">{{
+                            lastPlayedMusicData?.attributes?.name
                         }}</NuxtLink>
                     </h3>
                     <p class="text-sand-100/80 text-xs max-h-8 overflow-hidden">
-                        {{ lastPlayedMusicData.attributes.artistName }}
+                        {{ lastPlayedMusicData?.attributes?.artistName }}
                     </p>
                 </div>
             </div>
