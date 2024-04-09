@@ -11,9 +11,9 @@ const musicUrl = ref(`https://api.music.apple.com/v1`);
 
 const music = ref(null);
 const lastPlayedMusicData = ref(false);
-const pending = ref(true);
 const {
-    data
+    data,
+    pending: pending
 } = await useFetch(musicUrl.value + "/me/recent/played/tracks?limit=5", {
     headers: {
         Authorization: `Bearer ${token.value}`,
@@ -21,12 +21,9 @@ const {
     },
     method: "GET",
     lazy: true,
-    onResponse: (response) => {
-        lastPlayedMusicData.value = response.response._data.data[0];
-        pending.value = false;
-    },
 });
 
+lastPlayedMusicData.value = data.value.data[0];
 const musicBento = ref(null);
 const getArtworkUrl = (url) => {
     if(url != undefined){
