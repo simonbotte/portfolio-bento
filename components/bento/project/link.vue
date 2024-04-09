@@ -17,7 +17,7 @@
     >
         <div class="h-8 shrink-0"></div>
         <p class="flex flex-col items-center justify-center h-full font-bold text-xl tablet:text-3xl">
-            Voir le projet
+            Voir le site
         </p>
         <div class="w-8 h-8 flex items-center justify-center shrink-0 relative group">
             <div class="w-full h-full bg-sand-200 flex items-center justify-center rounded-full relative z-10">

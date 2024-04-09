@@ -39,7 +39,7 @@ onMounted(() => {
             <AppButton
                 v-else-if="project.link != ''"
                 :to="`${project.link}`"
-                text="Voir le projet"
+                text="Voir le site"
                 :target="'_blank'"
                 :theme="'border-sand'"
             />
