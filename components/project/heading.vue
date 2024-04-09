@@ -24,6 +24,6 @@ const props = defineProps({
             <p class="text-sm font-bold tablet:text-base">{{ project.baseline }}</p>
             <p class="text-sm leading-5 tablet:text-base">{{ project.description }}</p>
         </div>
-        <AppButton v-if="project.link != ''" :to="`${project.link}`" text="Voir le projet" :target="'_blank'"/>
+        <AppButton v-if="project.link != ''" :to="`${project.link}`" text="Voir le site" :target="'_blank'"/>
     </section>
 </template>

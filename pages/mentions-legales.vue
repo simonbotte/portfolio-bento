@@ -3,8 +3,54 @@ const apiUrl = `/api/strapi/legals/`;
 const { data: legalsData } = await useFetch(apiUrl, {
     method: "GET",
 });
-console.log(legalsData);
 const data = ref(legalsData.value?.data.attributes);
+
+useHead({
+    title: "Simon Botté | Développeur web full-stack | Mentions légales",
+    meta: [
+        {
+            hid: "description",
+            name: "description",
+            content:
+                "Lisez les mentions légales de mon portfolio bento. Pour rappel, Je suis développeur web full-stack",
+        },
+        {
+            name: "title",
+            content: "Simon Botté | Développeur web full-stack | Mentions légales",
+        },
+        {
+            name: "description",
+            content:
+            "Lisez les mentions légales de mon portfolio bento. Pour rappel, Je suis développeur web full-stack",
+        },
+        {
+            name: "og:title",
+            content: "Simon Botté | Développeur web full-stack | Mentions légales",
+        },
+        {
+            name: "og:description",
+            content:
+            "Lisez les mentions légales de mon portfolio bento. Pour rappel, Je suis développeur web full-stack",
+        },
+        {
+            name: "og:image",
+            content: "https://pre.simonbotte.fr/og-image/home.jpg",
+        },
+        {
+            name: "twitter:title",
+            content: "Simon Botté | Développeur web full-stack | Mentions légales",
+        },
+        {
+            name: "twitter:description",
+            content:
+            "Lisez les mentions légales de mon portfolio bento. Pour rappel, Je suis développeur web full-stack",
+        },
+        {
+            name: "twitter:image",
+            content: "https://pre.simonbotte.fr/og-image/home.jpg",
+        },
+    ],
+});
 </script>
 
 <template>

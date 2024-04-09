@@ -28,7 +28,7 @@ useHead({
         },
         {
             name: "og:image",
-            content: "https://simonbotte.fr/og-images/home.jpg",
+            content: "https://pre.simonbotte.fr/og-image/home.jpg",
         },
         {
             name: "twitter:title",
@@ -41,7 +41,7 @@ useHead({
         },
         {
             name: "twitter:image",
-            content: "https://pre.simonbotte.fr/og-images/home.jpg",
+            content: "https://pre.simonbotte.fr/og-image/home.jpg",
         },
     ],
 });
