@@ -35,7 +35,7 @@ useHead({
         },
         {
             name: "og:url",
-            content: "https://simonbotte.fr",
+            content: "https://www.simonbotte.fr",
         },
         {
             name: "twitter:card",
@@ -43,7 +43,7 @@ useHead({
         },
         {
             name: "twitter:url",
-            content: "https://simonbotte.fr",
+            content: "https://www.simonbotte.fr",
         },
     ],
     link: [
