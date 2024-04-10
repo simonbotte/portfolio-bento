@@ -7,46 +7,25 @@ const projects = projectsData.value?.data;
 const archivedProjects = projects.filter((project) => project.attributes.archive === true);
 const currentProjects = projects.filter((project) => project.attributes.archive === false);
 
-
-useHead({
+useSeoMeta({
     title: "Simon Botté | Développeur web full-stack | Mes projets",
-    meta: [
-        {
-            name: "title",
-            content: "Simon Botté | Développeur web full-stack | Mes projets",
-        },
-        {
-            name: "description",
-            content:
-                "Découvrez les technologies que j'aime a travers mes projets personnel et professionnel",
-        },
-        {
-            name: "og:title",
-            content: "Simon Botté | Développeur web full-stack | Mes projets",
-        },
-        {
-            name: "og:description",
-            content:
-                "Découvrez les technologies que j'aime a travers mes projets personnel et professionnel",
-        },
-        {
-            name: "og:image",
-            content: "https://pre.simonbotte.fr/og-image/home.jpg",
-        },
-        {
-            name: "twitter:title",
-            content: "Simon Botté | Développeur web full-stack | Portfolio",
-        },
-        {
-            name: "twitter:description",
-            content:
-            "Je suis Simon Botté et bienvenu sur mon portfolio. Explorez mes projets de développement web full-stack (front et back) avec mon portfolio bento",
-        },
-        {
-            name: "twitter:image",
-            content: "https://pre.simonbotte.fr/og-image/home.jpg",
-        },
-    ],
+    description:
+        "Découvrez les technologies que j'aime a travers mes projets personnel et professionnel",
+    image: "https://pre.simonbotte.fr/og-image/home.jpg",
+    url: "https://www.simonbotte.fr",
+    ogImage: "https://pre.simonbotte.fr/og-image/home.jpg",
+    ogSiteName: "Simon Botté | Développeur web full-stack | Portfolio",
+    ogType: "website",
+    ogLocale: "fr_FR",
+    ogUrl: "https://www.simonbotte.fr",
+    ogTitle: "Simon Botté | Développeur web full-stack | Mes projets",
+    ogDescription:
+        "Découvrez les technologies que j'aime a travers mes projets personnel et professionnel",
+    twitterCard: "summary_large_image",
+    twitterSite: "@simonbotte",
+    twitterCreator: "@simonbotte",
+    twitterImage: "https://pre.simonbotte.fr/og-image/home.jpg",
+    canonical: "https://www.simonbotte.fr/projets",
 });
 </script>
 

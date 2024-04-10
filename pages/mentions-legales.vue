@@ -5,51 +5,25 @@ const { data: legalsData } = await useFetch(apiUrl, {
 });
 const data = ref(legalsData.value?.data.attributes);
 
-useHead({
+useSeoMeta({
     title: "Simon Botté | Développeur web full-stack | Mentions légales",
-    meta: [
-        {
-            hid: "description",
-            name: "description",
-            content:
-                "Lisez les mentions légales de mon portfolio bento. Pour rappel, Je suis développeur web full-stack",
-        },
-        {
-            name: "title",
-            content: "Simon Botté | Développeur web full-stack | Mentions légales",
-        },
-        {
-            name: "description",
-            content:
-            "Lisez les mentions légales de mon portfolio bento. Pour rappel, Je suis développeur web full-stack",
-        },
-        {
-            name: "og:title",
-            content: "Simon Botté | Développeur web full-stack | Mentions légales",
-        },
-        {
-            name: "og:description",
-            content:
-            "Lisez les mentions légales de mon portfolio bento. Pour rappel, Je suis développeur web full-stack",
-        },
-        {
-            name: "og:image",
-            content: "https://pre.simonbotte.fr/og-image/home.jpg",
-        },
-        {
-            name: "twitter:title",
-            content: "Simon Botté | Développeur web full-stack | Mentions légales",
-        },
-        {
-            name: "twitter:description",
-            content:
-            "Lisez les mentions légales de mon portfolio bento. Pour rappel, Je suis développeur web full-stack",
-        },
-        {
-            name: "twitter:image",
-            content: "https://pre.simonbotte.fr/og-image/home.jpg",
-        },
-    ],
+    description:
+        "Mentions légales du site de Simon Botté, développeur web full-stack. Découvrez les informations légales du site de Simon Botté.",
+    image: "https://www.simonbotte.fr/og-image/home.jpg",
+    url: "https://www.simonbotte.fr",
+    ogImage: "https://www.simonbotte.fr/og-image/home.jpg",
+    ogSiteName: "Simon Botté | Développeur web full-stack | Mentions légales",
+    ogType: "website",
+    ogLocale: "fr_FR",
+    ogUrl: "https://www.simonbotte.fr",
+    ogTitle: "Simon Botté | Développeur web full-stack | Mentions légales",
+    ogDescription:
+        "Mentions légales du site de Simon Botté, développeur web full-stack. Découvrez les informations légales du site de Simon Botté.",
+    twitterCard: "summary_large_image",
+    twitterSite: "@simonbotte",
+    twitterCreator: "@simonbotte",
+    twitterImage: "https://www.simonbotte.fr/og-image/home.jpg",
+    canonical: "https://www.simonbotte.fr/mentions-legales",
 });
 </script>
 

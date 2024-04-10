@@ -20,45 +20,23 @@ const project = ref(projectsData.value?.project.data[0]);
 const nextProject = ref(projectsData.value?.nextProject.data[0]);
 const previousProject = ref(projectsData.value?.previousProject.data[0]);
 
-useHead({
-    title: project.value.attributes.metaTitle,
-    meta: [
-        {
-            name: "title",
-            content: project.value.attributes.metaTitle,
-        },
-        {
-            name: "description",
-            content:
-                project.value.attributes.metaDescription,
-        },
-        {
-            name: "og:title",
-            content: project.value.attributes.metaTitle,
-        },
-        {
-            name: "og:description",
-            content:
-                project.value.attributes.metaDescription,
-        },
-        {
-            name: "og:image",
-            content: apiHost + project.value.attributes.ogImage.data.attributes.url
-        },
-        {
-            name: "twitter:title",
-            content: "Simon Botté | Développeur web full-stack | Portfolio",
-        },
-        {
-            name: "twitter:description",
-            content:
-                "Je suis Simon Botté et bienvenu sur mon portfolio. Explorez mes projets de développement web full-stack (front et back) avec mon portfolio bento",
-        },
-        {
-            name: "twitter:image",
-            content: apiHost + project.value.attributes.ogImage.data.attributes.url,
-        },
-    ],
+useSeoMeta({
+    title: project.value.attributes.metaTitle + ' | Simon Botté',
+    description: project.value.attributes.metaDescription,
+    image: apiHost + project.value.attributes.ogImage.data.attributes.url,
+    url: "https://www.simonbotte.fr",
+    ogImage: apiHost + project.value.attributes.ogImage.data.attributes.url,
+    ogSiteName: "Simon Botté | Développeur web full-stack | Portfolio",
+    ogType: "website",
+    ogLocale: "fr_FR",
+    ogUrl: "https://www.simonbotte.fr",
+    ogTitle: project.value.attributes.metaTitle + ' | Simon Botté',
+    ogDescription: project.value.attributes.metaDescription,
+    twitterCard: "summary_large_image",
+    twitterSite: "@simonbotte",
+    twitterCreator: "@simonbotte",
+    twitterImage: apiHost + project.value.attributes.ogImage.data.attributes.url,
+    canonical: "https://www.simonbotte.fr/projets/" + project.value.attributes.slug,
 });
 
 if (project.value.attributes.content == null) {

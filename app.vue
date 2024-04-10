@@ -29,22 +29,6 @@ useHead({
             name: "google-site-verification",
             content: "RvrIwIVpeiE6JCQchWjMyoajKEqSTJFmSRCFCqLYfy0",
         },
-        {
-            name: "og:type",
-            content: "website",
-        },
-        {
-            name: "og:url",
-            content: "https://www.simonbotte.fr",
-        },
-        {
-            name: "twitter:card",
-            content: "summary_large_image",
-        },
-        {
-            name: "twitter:url",
-            content: "https://www.simonbotte.fr",
-        },
     ],
     link: [
         {
@@ -87,7 +71,25 @@ useHead({
         class: "bg-jungle-900 text-sand-100 antialiased",
     },
 });
+
+useSeoMeta({
+    title: "Simon Botté | Développeur web full-stack",
+    description:
+        "Je suis Simon Botté, développeur web full-stack. Je suis spécialisé dans la création de sites web et d'applications web. Je suis basé à Bordeaux, France.",
+    image: "https://www.simonbotte.fr/og-image/home.jpg",
+    url: "https://www.simonbotte.fr",
+    ogSiteName: "Simon Botté | Portfolio",
+    ogType: "website",
+    ogLocale: "fr_FR",
+    ogUrl: "https://www.simonbotte.fr",
+    twitterCard: "summary_large_image",
+    twitterSite: "@simonbotte",
+    twitterCreator: "@simonbotte",
+    twitterImage: "https://www.simonbotte.fr/og-image/home.jpg",
+    lang: "fr",
+});
 </script>
+
 
 <template>
     <AppHeader />
