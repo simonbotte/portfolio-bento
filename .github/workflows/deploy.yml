@@ -13,6 +13,7 @@ env:
   APPLE_USER_TOKEN: ${{secrets.APPLE_USER_TOKEN}}
   STRAPI_URL: ${{secrets.STRAPI_URL}}
   STRAPI_TOKEN: ${{secrets.STRAPI_TOKEN}}
+  GOOGLE_ANALYTICS_ID: ${{secrets.GOOGLE_ANALYTICS_ID}}
 
 jobs:
     build:
