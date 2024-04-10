@@ -1,4 +1,6 @@
 <script setup>
+
+const currentUrl = useRequestURL();
 useHead({
     meta: [
         {
@@ -66,9 +68,16 @@ useHead({
             href: "/safari-pinned-tab.svg?v=2",
             color: "#5bbad5",
         },
+        {
+            rel:"canonical",
+            href: currentUrl.href,
+        }
     ],
     bodyAttrs: {
         class: "bg-jungle-900 text-sand-100 antialiased",
+    },
+    htmlAttrs: {
+        lang: "fr",
     },
 });
 

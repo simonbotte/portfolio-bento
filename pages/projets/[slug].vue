@@ -36,7 +36,6 @@ useSeoMeta({
     twitterSite: "@simonbotte",
     twitterCreator: "@simonbotte",
     twitterImage: apiHost + project.value.attributes.ogImage.data.attributes.url,
-    canonical: "https://www.simonbotte.fr/projets/" + project.value.attributes.slug,
 });
 
 if (project.value.attributes.content == null) {

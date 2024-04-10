@@ -7,28 +7,26 @@ const content = ref(projectsData.value?.data);
 const buttonCV = ref(false);
 const config = useRuntimeConfig();
 const apiHost = config.public.STRAPI_URL;
-
+console.log(content);
 useSeoMeta({
-    title: "Simon Botté | Développeur web full-stack | À propos de moi",
-    description:
-        "Apprenez en plus moi. Je suis développeur web full-stack et je suis spécialisé dans la création de sites web et d'applications web. Je suis basé à Bordeaux, France.",
+    title: content.value.attributes.metaTitle,
+    description: content.value.attributes.metaDescription,
     image: "https://www.simonbotte.fr/og-image/home.jpg",
     url: "https://www.simonbotte.fr",
     ogImage: "https://www.simonbotte.fr/og-image/home.jpg",
-    ogSiteName: "Simon Botté | Développeur web full-stack | À propos de moi",
+    ogSiteName: content.value.attributes.metaTitle,
     ogType: "website",
     ogLocale: "fr_FR",
     ogUrl: "https://www.simonbotte.fr",
-    ogTitle: "Simon Botté | Développeur web full-stack | À propos de moi",
-    ogDescription:
-        "Apprenez en plus moi. Je suis développeur web full-stack et je suis spécialisé dans la création de sites web et d'applications web. Je suis basé à Bordeaux, France.",
+    ogTitle: content.value.attributes.metaTitle,
+    ogDescription: content.value.attributes.metaDescription,
     twitterCard: "summary_large_image",
     twitterSite: "@simonbotte",
     twitterCreator: "@simonbotte",
     twitterImage: "https://www.simonbotte.fr/og-image/home.jpg",
     canonical: "https://www.simonbotte.fr/a-propos",
+    author: "Simon Botté",
 });
-
 onMounted(() => {
     useApparitionAnimation(buttonCV.value);
 });
@@ -52,13 +50,22 @@ onMounted(() => {
             <AboutContent :content="$rcTranslator(content.attributes.introduction)" class="" />
             <AboutContent :content="$rcTranslator(content.attributes.plans)" class="" />
             <div ref="buttonCV">
-                <AppButton text="Télécharger mon CV" target="_blanc" :to="apiHost + content.attributes.cv.data.attributes.url" class="col-span-2" />
+                <AppButton
+                    text="Télécharger mon CV"
+                    target="_blanc"
+                    :to="apiHost + content.attributes.cv.data.attributes.url"
+                    class="col-span-2"
+                />
             </div>
-            
+
             <AboutContent :content="$rcTranslator(content.attributes.passions)" class="" />
         </div>
         <div class="grid grid-cols-2 gap-4 w-full col-span-2 laptop:row-start-3 laptop:gap-8">
-            <BentoLink :title="'LinkedIn'" :icon="'/icons/linkedin.svg'" :link="'https://www.linkedin.com/in/simon-botte-530938175/'" />
+            <BentoLink
+                :title="'LinkedIn'"
+                :icon="'/icons/linkedin.svg'"
+                :link="'https://www.linkedin.com/in/simon-botte-530938175/'"
+            />
             <BentoLink :title="'GitHub'" :icon="'/icons/github.svg'" :link="'https://github.com/simonbotte'" />
         </div>
     </section>

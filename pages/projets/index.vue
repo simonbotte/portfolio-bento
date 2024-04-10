@@ -25,7 +25,6 @@ useSeoMeta({
     twitterSite: "@simonbotte",
     twitterCreator: "@simonbotte",
     twitterImage: "https://pre.simonbotte.fr/og-image/home.jpg",
-    canonical: "https://www.simonbotte.fr/projets",
 });
 </script>
 
