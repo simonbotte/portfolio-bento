@@ -1,28 +1,32 @@
 <script setup>
+const { data: homeContent } = await useFetch(apiHomeUrl, {
+    method: "GET",
+});
 useSeoMeta({
-    title: "Simon Botté | Développeur web full-stack | Portfolio",
+    title: homeContent.value?.data.attributes.metaTitle,
     description:
-        "Je suis Simon Botté, développeur web full-stack. Je suis spécialisé dans la création de sites web et d'applications web. Je suis basé à Bordeaux, France.",
+        homeContent.value?.data.attributes.metaDescription,
     image: "https://www.simonbotte.fr/og-image/home.jpg",
     url: "https://www.simonbotte.fr",
     ogImage: "https://www.simonbotte.fr/og-image/home.jpg",
-    ogSiteName: "Simon Botté | Développeur web full-stack | Portfolio",
+    ogSiteName: homeContent.value?.data.attributes.metaTitle,
     ogType: "website",
     ogLocale: "fr_FR",
     ogUrl: "https://www.simonbotte.fr",
-    ogTitle: "Simon Botté | Développeur web full-stack | Portfolio",
+    ogTitle: homeContent.value?.data.attributes.metaTitle,
     ogDescription:
-        "Je suis Simon Botté, développeur web full-stack. Je suis spécialisé dans la création de sites web et d'applications web. Je suis basé à Bordeaux, France.",
+        homeContent.value?.data.attributes.metaDescription,
     twitterCard: "summary_large_image",
     twitterSite: "@simonbotte",
     twitterCreator: "@simonbotte",
     twitterImage: "https://www.simonbotte.fr/og-image/home.jpg",
-    canonical: "https://www.simonbotte.fr",
 });
-const apiUrl = `/api/strapi/highlighted-projects/`;
-const { data: projectsData } = await useFetch(apiUrl, {
+const apiProjectUrl = `/api/strapi/highlighted-projects/`;
+const apiHomeUrl = `/api/strapi/home/`;
+const { data: projectsData } = await useFetch(apiProjectUrl, {
     method: "GET",
 });
+
 const projects = ref(projectsData.value?.data);
 </script>
 
@@ -41,7 +45,11 @@ const projects = ref(projectsData.value?.data);
         <BentoAbout class="tablet:row-start-2" />
         <BentoProject :project="projects[0].attributes" />
         <BentoJourney class="tablet:col-start-3 tablet:row-start-3 laptop:col-start-1 laptop:row-start-2" />
-        <BentoLink :title="'LinkedIn'" :icon="'/icons/linkedin.svg'" :link="'https://www.linkedin.com/in/simon-botte-530938175/'" />
+        <BentoLink
+            :title="'LinkedIn'"
+            :icon="'/icons/linkedin.svg'"
+            :link="'https://www.linkedin.com/in/simon-botte-530938175/'"
+        />
         <BentoLink :title="'GitHub'" :icon="'/icons/github.svg'" :link="'https://github.com/simonbotte'" />
         <BentoProject
             class="tablet:col-start-2 tablet:row-start-5 laptop:col-start-2 laptop:row-start-4"
