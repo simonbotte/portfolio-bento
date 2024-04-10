@@ -8,51 +8,25 @@ const buttonCV = ref(false);
 const config = useRuntimeConfig();
 const apiHost = config.public.STRAPI_URL;
 
-useHead({
+useSeoMeta({
     title: "Simon Botté | Développeur web full-stack | À propos de moi",
-    meta: [
-        {
-            hid: "description",
-            name: "description",
-            content:
-                "Apprenez en plus moi. Je suis développeur web full-stack et je suis spécialisé dans la création de sites web et d'applications web. Je suis basé à Bordeaux, France.",
-        },
-        {
-            name: "title",
-            content: "Simon Botté | Développeur web full-stack | À propos de moi",
-        },
-        {
-            name: "description",
-            content:
-            "Apprenez en plus moi. Je suis développeur web full-stack et je suis spécialisé dans la création de sites web et d'applications web. Je suis basé à Bordeaux, France.",
-        },
-        {
-            name: "og:title",
-            content: "Simon Botté | Développeur web full-stack | À propos de moi",
-        },
-        {
-            name: "og:description",
-            content:
-                "Apprenez en plus moi. Je suis développeur web full-stack et je suis spécialisé dans la création de sites web et d'applications web. Je suis basé à Bordeaux, France.",
-        },
-        {
-            name: "og:image",
-            content: "https://pre.simonbotte.fr/og-image/home.jpg",
-        },
-        {
-            name: "twitter:title",
-            content: "Simon Botté | Développeur web full-stack | À propos de moi",
-        },
-        {
-            name: "twitter:description",
-            content:
-                "Apprenez en plus moi. Je suis développeur web full-stack et je suis spécialisé dans la création de sites web et d'applications web. Je suis basé à Bordeaux, France.",
-        },
-        {
-            name: "twitter:image",
-            content: "https://pre.simonbotte.fr/og-image/home.jpg",
-        },
-    ],
+    description:
+        "Apprenez en plus moi. Je suis développeur web full-stack et je suis spécialisé dans la création de sites web et d'applications web. Je suis basé à Bordeaux, France.",
+    image: "https://www.simonbotte.fr/og-image/home.jpg",
+    url: "https://www.simonbotte.fr",
+    ogImage: "https://www.simonbotte.fr/og-image/home.jpg",
+    ogSiteName: "Simon Botté | Développeur web full-stack | À propos de moi",
+    ogType: "website",
+    ogLocale: "fr_FR",
+    ogUrl: "https://www.simonbotte.fr",
+    ogTitle: "Simon Botté | Développeur web full-stack | À propos de moi",
+    ogDescription:
+        "Apprenez en plus moi. Je suis développeur web full-stack et je suis spécialisé dans la création de sites web et d'applications web. Je suis basé à Bordeaux, France.",
+    twitterCard: "summary_large_image",
+    twitterSite: "@simonbotte",
+    twitterCreator: "@simonbotte",
+    twitterImage: "https://www.simonbotte.fr/og-image/home.jpg",
+    canonical: "https://www.simonbotte.fr/a-propos",
 });
 
 onMounted(() => {

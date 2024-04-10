@@ -1,51 +1,24 @@
 <script setup>
-useHead({
+useSeoMeta({
     title: "Simon Botté | Développeur web full-stack | Portfolio",
-    meta: [
-        {
-            hid: "description",
-            name: "description",
-            content:
-                "Développeur web full-stack, je suis spécialisé dans la création de sites web et d'applications web. Je suis basé à Bordeaux, France.",
-        },
-        {
-            name: "title",
-            content: "Simon Botté | Développeur web full-stack | Portfolio",
-        },
-        {
-            name: "description",
-            content:
-                "Je suis Simon Botté et bienvenu sur mon portfolio. Explorez mes projets de développement web full-stack (front et back) avec mon portfolio bento",
-        },
-        {
-            name: "og:title",
-            content: "Simon Botté | Développeur web full-stack | Portfolio",
-        },
-        {
-            name: "og:description",
-            content:
-                "Je suis Simon Botté et bienvenu sur mon portfolio. Explorez mes projets de développement web full-stack (front et back) avec mon portfolio bento",
-        },
-        {
-            name: "og:image",
-            content: "https://pre.simonbotte.fr/og-image/home.jpg",
-        },
-        {
-            name: "twitter:title",
-            content: "Simon Botté | Développeur web full-stack | Portfolio",
-        },
-        {
-            name: "twitter:description",
-            content:
-                "Je suis Simon Botté et bienvenu sur mon portfolio. Explorez mes projets de développement web full-stack (front et back) avec mon portfolio bento",
-        },
-        {
-            name: "twitter:image",
-            content: "https://pre.simonbotte.fr/og-image/home.jpg",
-        },
-    ],
+    description:
+        "Je suis Simon Botté, développeur web full-stack. Je suis spécialisé dans la création de sites web et d'applications web. Je suis basé à Bordeaux, France.",
+    image: "https://www.simonbotte.fr/og-image/home.jpg",
+    url: "https://www.simonbotte.fr",
+    ogImage: "https://www.simonbotte.fr/og-image/home.jpg",
+    ogSiteName: "Simon Botté | Développeur web full-stack | Portfolio",
+    ogType: "website",
+    ogLocale: "fr_FR",
+    ogUrl: "https://www.simonbotte.fr",
+    ogTitle: "Simon Botté | Développeur web full-stack | Portfolio",
+    ogDescription:
+        "Je suis Simon Botté, développeur web full-stack. Je suis spécialisé dans la création de sites web et d'applications web. Je suis basé à Bordeaux, France.",
+    twitterCard: "summary_large_image",
+    twitterSite: "@simonbotte",
+    twitterCreator: "@simonbotte",
+    twitterImage: "https://www.simonbotte.fr/og-image/home.jpg",
+    canonical: "https://www.simonbotte.fr",
 });
-
 const apiUrl = `/api/strapi/highlighted-projects/`;
 const { data: projectsData } = await useFetch(apiUrl, {
     method: "GET",
