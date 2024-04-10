@@ -27,18 +27,6 @@ useSeoMeta({
     canonical: "https://www.simonbotte.fr/a-propos",
     author: "Simon Botté",
 });
-//set canonical
-useHead(
-    {
-        link: [
-            {
-                rel: "canonical",
-                href: "https://www.simonbotte.fr/a-propos",
-            },
-        ],
-    },
-    { pbody: true }
-);
 onMounted(() => {
     useApparitionAnimation(buttonCV.value);
 });
