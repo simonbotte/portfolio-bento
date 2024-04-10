@@ -11,13 +11,17 @@ export default defineNuxtConfig({
         pageTransition: { name: "page", mode: "out-in" },
     },
     css: ["~/assets/css/main.css"],
-    modules: ["@nuxt/image"],
+    modules: ["@nuxt/image","nuxt-gtag"],
+    gtag: {
+        id: process.env.GOOGLE_ANALYTICS_ID,
+    },
     postcss: {
         plugins: {
             tailwindcss: {},
             autoprefixer: {},
         },
     },
+
     runtimeConfig: {
         APPLE_TEAM_ID: process.env.APPLE_TEAM_ID,
         APPLE_KEY_ID: process.env.APPLE_KEY_ID,
