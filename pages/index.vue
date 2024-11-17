@@ -1,33 +1,34 @@
 <script setup>
+const apiHomeUrl = `/api/strapi/home/`;
+const apiProjectUrl = `/api/strapi/highlighted-projects/`;
+
 const { data: homeContent } = await useFetch(apiHomeUrl, {
     method: "GET",
 });
+
 useSeoMeta({
-    title: homeContent.value?.data.attributes.metaTitle,
-    description:
-        homeContent.value?.data.attributes.metaDescription,
+    title: homeContent.value?.metaTitle,
+    description: homeContent.value?.metaDescription,
     image: "https://www.simonbotte.fr/og-image/home.jpg",
     url: "https://www.simonbotte.fr",
     ogImage: "https://www.simonbotte.fr/og-image/home.jpg",
-    ogSiteName: homeContent.value?.data.attributes.metaTitle,
+    ogSiteName: homeContent.value?.metaTitle,
     ogType: "website",
     ogLocale: "fr_FR",
     ogUrl: "https://www.simonbotte.fr",
-    ogTitle: homeContent.value?.data.attributes.metaTitle,
-    ogDescription:
-        homeContent.value?.data.attributes.metaDescription,
+    ogTitle: homeContent.value?.metaTitle,
+    ogDescription: homeContent.value?.metaDescription,
     twitterCard: "summary_large_image",
     twitterSite: "@simonbotte",
     twitterCreator: "@simonbotte",
     twitterImage: "https://www.simonbotte.fr/og-image/home.jpg",
 });
-const apiProjectUrl = `/api/strapi/highlighted-projects/`;
-const apiHomeUrl = `/api/strapi/home/`;
+
 const { data: projectsData } = await useFetch(apiProjectUrl, {
     method: "GET",
 });
 
-const projects = ref(projectsData.value?.data);
+const projects = ref(projectsData.value);
 </script>
 
 <template>
@@ -43,7 +44,7 @@ const projects = ref(projectsData.value?.data);
         />
         <LazyBentoMusic />
         <BentoAbout class="tablet:row-start-2" />
-        <BentoProject :project="projects[0].attributes" />
+        <BentoProject :project="projects[0]" />
         <BentoJourney class="tablet:col-start-3 tablet:row-start-3 laptop:col-start-1 laptop:row-start-2" />
         <BentoLink
             :title="'LinkedIn'"
@@ -53,7 +54,7 @@ const projects = ref(projectsData.value?.data);
         <BentoLink :title="'GitHub'" :icon="'/icons/github.svg'" :link="'https://github.com/simonbotte'" />
         <BentoProject
             class="tablet:col-start-2 tablet:row-start-5 laptop:col-start-2 laptop:row-start-4"
-            :project="projects[1].attributes"
+            :project="projects[1]"
         />
     </section>
 </template>
