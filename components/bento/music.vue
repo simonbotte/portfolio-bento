@@ -11,10 +11,12 @@ const musicUrl = ref(`https://api.music.apple.com/v1`);
 
 const music = ref(null);
 const lastPlayedMusicData = ref(false);
+console.log(token.value, userToken.value);
+
 const {
     data,
-    pending: pending
-} = await useFetch(musicUrl.value + "/me/recent/played/tracks?limit=5", {
+    status,
+} = await useFetch(musicUrl.value + "/me/recent/played/tracks?limit=3", {
     headers: {
         Authorization: `Bearer ${token.value}`,
         "Music-User-Token": userToken.value,
@@ -22,8 +24,8 @@ const {
     method: "GET",
     lazy: true,
 });
-
-lastPlayedMusicData.value = data.value.data[0];
+console.log(status.value);
+// lastPlayedMusicData.value = data.value.data[0];
 const musicBento = ref(null);
 const getArtworkUrl = (url) => {
     if(url != undefined){
@@ -40,7 +42,7 @@ onMounted(async () => {
         ref="musicBento"
         class="musicBento bg-sand-800 p-4 h-bento-mobile-1 flex flex-col gap-2 justify-between rounded-2xl overflow-hidden h-bento-mobile tablet:p-4 tablet:h-bento-tablet laptop:p-6 laptop:h-bento-laptop"
     >
-        <div class="card-container relative w-8 h-8 tablet:w-10 tablet:h-10 laptop:w-12 laptop:h-12">
+        <!-- <div class="card-container relative w-8 h-8 tablet:w-10 tablet:h-10 laptop:w-12 laptop:h-12">
             <div class="card absolute w-full h-full ease-smooth duration-300">
                 <NuxtImg
                     src="/icons/appleMusic.svg"
@@ -71,6 +73,12 @@ onMounted(async () => {
                     </p>
                 </div>
             </div>
+        </div> -->
+        <div class="flex flex-col gap-4 h-full w-full items-center justify-center">
+            <p class="text-sand-100 leading-4 text-lg font-bold overflow-hidden tablet:text-lg tablet:leading-5 text-center">
+                J'écoute plein de musique de tout genre.
+            </p>
+            <p class="text-sand-100 leading-4 text-sm overflow-hidden text-center"> Beaucoup de bandes originales de films, de l'électro, de la pop, du rock, et un chouïa de rap.</p>
         </div>
     </div>
 </template>
