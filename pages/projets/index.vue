@@ -4,8 +4,8 @@ const { data: projectsData } = await useFetch(apiUrl, {
     method: "GET",
 });
 const projects = projectsData.value?.data;
-const archivedProjects = projects.filter((project) => project.attributes.archive === true);
-const currentProjects = projects.filter((project) => project.attributes.archive === false);
+const archivedProjects = projects.filter((project) => project.archive === true);
+const currentProjects = projects.filter((project) => project.archive === false);
 
 useSeoMeta({
     title: "Simon Botté | Développeur web full-stack | Mes projets",
@@ -43,7 +43,7 @@ useSeoMeta({
                 <BentoProject
                     v-for="project in currentProjects"
                     :key="project.id"
-                    :project="project.attributes"
+                    :project="project"
                     class="tablet:col-span-3 laptop:col-span-2"
                 />
             </div>
@@ -58,7 +58,7 @@ useSeoMeta({
                 <BentoProject
                     v-for="project in archivedProjects"
                     :key="project.id"
-                    :project="project.attributes"
+                    :project="project"
                     class="tablet:col-span-3 laptop:col-span-2"
                 />
             </div>

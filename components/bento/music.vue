@@ -24,8 +24,8 @@ const {
     method: "GET",
     lazy: true,
 });
-console.log(status.value);
-// lastPlayedMusicData.value = data.value.data[0];
+
+lastPlayedMusicData.value = data.value.data[0];
 const musicBento = ref(null);
 const getArtworkUrl = (url) => {
     if(url != undefined){
@@ -42,7 +42,7 @@ onMounted(async () => {
         ref="musicBento"
         class="musicBento bg-sand-800 p-4 h-bento-mobile-1 flex flex-col gap-2 justify-between rounded-2xl overflow-hidden h-bento-mobile tablet:p-4 tablet:h-bento-tablet laptop:p-6 laptop:h-bento-laptop"
     >
-        <!-- <div class="card-container relative w-8 h-8 tablet:w-10 tablet:h-10 laptop:w-12 laptop:h-12">
+        <div class="card-container relative w-8 h-8 tablet:w-10 tablet:h-10 laptop:w-12 laptop:h-12">
             <div class="card absolute w-full h-full ease-smooth duration-300">
                 <NuxtImg
                     src="/icons/appleMusic.svg"
@@ -50,7 +50,7 @@ onMounted(async () => {
                     :width="36"
                     class="card-img card-img-front shrink-0 w-full absolute top-0 left-0"
                 />
-                <NuxtLink v-if="pending == false" :to="lastPlayedMusicData?.attributes?.url" target="_blank" class="card-img card-img-back absolute top-0 left-0 w-full h-full">
+                <NuxtLink v-if="status == 'success'" :to="lastPlayedMusicData?.attributes?.url" target="_blank" class="card-img card-img-back absolute top-0 left-0 w-full h-full">
                     <NuxtImg :src="getArtworkUrl(lastPlayedMusicData?.attributes?.artwork.url)" class="w-full h-full object-cover rounded-md" :alt="`Artwork de ${lastPlayedMusicData?.attributes?.name}`"></NuxtImg>
                 </NuxtLink>
                 
@@ -59,7 +59,7 @@ onMounted(async () => {
         <div class="flex flex-col gap-1 tablet:gap-4">
             <div class="flex gap-2 flex-col items-start">
                 <h2 class="text-sand-100 text-sm leading-4 tablet:text-xl tablet:leading-6">Dernière écoute</h2>
-                <div v-if="pending == false" class="flex flex-col gap-1">
+                <div v-if="status == 'success'" class="flex flex-col gap-1">
                     <h3
                         class="text-sand-100 leading-4 text-sm font-bold max-h-8 overflow-hidden tablet:text-lg tablet:leading-5 tablet:max-h-14"
                         :data-full-name="lastPlayedMusicData?.attributes?.name"
@@ -73,12 +73,6 @@ onMounted(async () => {
                     </p>
                 </div>
             </div>
-        </div> -->
-        <div class="flex flex-col gap-4 h-full w-full items-center justify-center">
-            <p class="text-sand-100 leading-4 text-lg font-bold overflow-hidden tablet:text-lg tablet:leading-5 text-center">
-                J'écoute plein de musique de tout genre.
-            </p>
-            <p class="text-sand-100 leading-4 text-sm overflow-hidden text-center"> Beaucoup de bandes originales de films, de l'électro, de la pop, du rock, et un chouïa de rap.</p>
         </div>
     </div>
 </template>

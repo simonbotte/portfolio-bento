@@ -3,7 +3,7 @@ const apiUrl = `/api/strapi/legals/`;
 const { data: legalsData } = await useFetch(apiUrl, {
     method: "GET",
 });
-const data = ref(legalsData.value?.data.attributes);
+const data = ref(legalsData.value?.data);
 
 useSeoMeta({
     title: "Simon Botté | Développeur web full-stack | Mentions légales",
