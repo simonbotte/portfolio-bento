@@ -45,9 +45,6 @@ if (project.value.content == null) {
 if (project.value == null) {
     await navigateTo("/projets", 301);
 }
-
-console.log(project.value);
-
 </script>
 
 <template>
