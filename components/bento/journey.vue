@@ -18,7 +18,8 @@ onMounted(() => {
             </div>
             <div class="flex flex-col">
                 <div class="mb-4 laptop:mb-6">
-                    <p class="font-bold leading-5 laptop:text-lg laptop:leading-6">À la recherche d’une nouvelle aventure</p>
+                    <p class="leading-5 mb-1 laptop:text-lg laptop:leading-6">Développeur web full-stack</p>
+                    <p class="text-xs">Consoneo <br> Bordeaux</p>
                 </div>
             </div>
         </div>
