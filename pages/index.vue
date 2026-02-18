@@ -29,9 +29,6 @@ const { data: projectsData } = await useFetch(apiProjectUrl, {
     method: "GET",
 });
 
-console.log(projectsData.value);
-
-
 const projects = ref(projectsData.value?.data);
 </script>
 
@@ -46,7 +43,6 @@ const projects = ref(projectsData.value?.data);
             alt="Photo d'un suricate"
             class="tablet:col-start-1 tablet:row-start-2 laptop:col-start-4 laptop:row-start-1"
         />
-        <LazyBentoMusic />
         <BentoAbout class="tablet:row-start-2" />
         <BentoProject :project="projects[0]" />
         <BentoJourney class="tablet:col-start-3 tablet:row-start-3 laptop:col-start-1 laptop:row-start-2" />
