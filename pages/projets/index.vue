@@ -1,11 +1,19 @@
 <script setup lang="js">
+import { additionalProjects } from "~/data/projects";
+
 const apiUrl = `/api/strapi/projects/`;
 const { data: projectsData } = await useFetch(apiUrl, {
     method: "GET",
 });
-const projects = projectsData.value?.data;
-const archivedProjects = projects.filter((project) => project.archive === true);
-const currentProjects = projects.filter((project) => project.archive === false);
+const projects = computed(() => {
+    const cmsProjects = projectsData.value?.data ?? [];
+    return [
+        ...additionalProjects.filter((project) => !cmsProjects.some((entry) => entry.slug === project.slug)),
+        ...cmsProjects,
+    ];
+});
+const archivedProjects = computed(() => projects.value.filter((project) => project.archive === true));
+const currentProjects = computed(() => projects.value.filter((project) => project.archive === false));
 
 useSeoMeta({
     title: "Simon Botté | Développeur web full-stack | Mes projets",

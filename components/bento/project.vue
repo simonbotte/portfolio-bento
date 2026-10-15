@@ -1,4 +1,6 @@
 <script setup>
+import { getProjectWebsite } from "~/data/projects";
+
 const props = defineProps({
     project: {
         type: Object,
@@ -6,6 +8,7 @@ const props = defineProps({
     },
 });
 
+const websiteLink = computed(() => getProjectWebsite(props.project));
 const projectBento = ref(null);
 
 onMounted(() => {
@@ -37,8 +40,8 @@ onMounted(() => {
         <div class="flex gap-4">
             <AppButton v-if="project.content?.length > 0" :to="`/projets/${project.slug}`" text="En savoir plus" />
             <AppButton
-                v-else-if="project.link != ''"
-                :to="`${project.link}`"
+                v-else-if="websiteLink"
+                :to="websiteLink"
                 text="Voir le site"
                 :target="'_blank'"
                 :theme="'border-sand'"

@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Réautoriser Apple Music</title>
+    <style>
+        body{font:16px/1.6 system-ui;background:#f4efe8;color:#31291f;margin:0;padding:48px 24px}
+        main{max-width:560px;margin:8vh auto}
+        button{font:inherit;background:#31291f;color:white;border:0;border-radius:12px;padding:12px 20px;cursor:pointer}
+        button:disabled{opacity:.5;cursor:wait}
+        p,a{color:#65594b}#status{min-height:3em}
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Reconnecter Apple Music</h1>
+        <p>Connecte ton compte Apple Music pour actualiser la tuile « Dernière écoute » du portfolio.</p>
+        <p>Le nouveau jeton sera vérifié auprès d’Apple puis enregistré dans le fichier .env de ce projet, sur ton ordinateur.</p>
+        <button id="connect" disabled>Se connecter avec Apple Music</button>
+        <p id="status" role="status">Chargement de MusicKit…</p>
+        <a id="alternative" href="__BASE_PATH__?sdk=__OTHER_SDK__" hidden>Essayer l’autre version de la connexion Apple</a>
+    </main>
+    <script type="application/json" id="configuration">__CONFIGURATION__</script>
+    <script type="module" src="__BASE_PATH__/client.js"></script>
+    <script src="https://js-cdn.music.apple.com/musickit/__SDK_VERSION__/musickit.js" onerror="document.querySelector('#status').textContent='Impossible de charger MusicKit. Vérifie ta connexion.'" async></script>
+</body>
+</html>

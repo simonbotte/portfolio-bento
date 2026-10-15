@@ -1,10 +1,14 @@
 <script setup>
+import { getProjectWebsite } from "~/data/projects";
+
 const props = defineProps({
     project: {
         type: Object,
         required: true,
     },
 });
+
+const websiteLink = computed(() => getProjectWebsite(props.project));
 </script>
 
 <template>
@@ -24,6 +28,6 @@ const props = defineProps({
             <p class="text-sm font-bold tablet:text-base">{{ project.baseline }}</p>
             <p class="text-sm leading-5 tablet:text-base">{{ project.description }}</p>
         </div>
-        <AppButton v-if="project.link != ''" :to="`${project.link}`" text="Voir le site" :target="'_blank'"/>
+        <AppButton v-if="websiteLink" :to="websiteLink" text="Voir le site" :target="'_blank'"/>
     </section>
 </template>

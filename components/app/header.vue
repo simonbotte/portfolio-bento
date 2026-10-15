@@ -18,7 +18,7 @@ const toggleMenu = () => {
         :class="`fixed z-10 left-1/2 -translate-x-1/2 flex justify-center items-center p-4 top-0 w-full max-w-mobile box-border pb-0 transition-all duration-300 tablet:max-w-tablet laptop:max-w-laptop`"
     >
         <div
-            :class="`flex flex-col justify-between items-start bg-jungle-700/80 backdrop-blur w-full px-4 py-5 rounded-2xl ${isOpen ? 'gap-4' : 'gap-0'} transition-all duration-300 tablet:flex-row tablet:items-center`"
+            :class="`flex flex-col justify-between items-start bg-jungle-700/80 backdrop-blur-sm w-full px-4 py-5 rounded-2xl ${isOpen ? 'gap-4' : 'gap-0'} transition-all duration-300 tablet:flex-row tablet:items-center`"
         >
             <div class="flex justify-between w-full">
                 <div @click="toggleMenu" class="flex tablet:hidden flex-col justify-center items-center">

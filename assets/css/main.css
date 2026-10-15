@@ -1,6 +1,69 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@theme {
+  --breakpoint-*: initial;
+  --breakpoint-tablet: 768px;
+  --breakpoint-laptop: 1200px;
+
+  --color-*: initial;
+  --color-transparent: transparent;
+  --color-current: currentColor;
+
+  --color-jungle-50: #eef1ef;
+  --color-jungle-100: #d8deda;
+  --color-jungle-200: #bfc9c2;
+  --color-jungle-300: #a7b4ab;
+  --color-jungle-400: #909f95;
+  --color-jungle-500: #7a8a80;
+  --color-jungle-600: #59685f;
+  --color-jungle-700: #404c45;
+  --color-jungle-800: #2a322d;
+  --color-jungle-900: #181c1a;
+  --color-jungle-700-80: rgba(64, 76, 68, 0.8);
+
+  --color-sand-50: #f6f0eb;
+  --color-sand-100: #e8dacf;
+  --color-sand-200: #d8c3b1;
+  --color-sand-300: #c6ac95;
+  --color-sand-400: #b3967b;
+  --color-sand-500: #9f8165;
+  --color-sand-600: #7b6045;
+  --color-sand-700: #5b4530;
+  --color-sand-800: #3c2e1f;
+  --color-sand-900: #211a13;
+  --color-sand-200-80: rgba(216, 195, 177, 0.8);
+
+  --container-mobile: 375px;
+  --container-tablet: 768px;
+  --container-laptop: 1200px;
+
+  --height-bento-mobile: 10.25rem;
+  --height-bento-tablet: 14.625rem;
+  --height-bento-laptop: 16.75rem;
+  --height-bento-mobile-2: 21.5rem;
+  --height-bento-tablet-2: 30.25rem;
+  --height-bento-laptop-2: 35.5rem;
+
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
 
 @font-face {
     font-family: "Gilmer";

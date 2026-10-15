@@ -8,18 +8,35 @@ onMounted(() => {
 <template>
     <div
     ref="journeyBento"
-        class=" bg-sand-800 px-4 py-6 h-bento-mobile-2 row-span-2 col-span-2 tablet:h-bento-tablet-2 tablet:col-span-1 laptop:h-bento-laptop-2 laptop:py-8 laptop:px-6 rounded-2xl overflow-hidden"
+        role="region"
+        aria-label="Parcours professionnel et personnel"
+        tabindex="0"
+        class=" bg-sand-800 px-4 py-6 h-bento-mobile-2 row-span-2 col-span-2 tablet:h-bento-tablet-2 tablet:col-span-1 laptop:h-bento-laptop-2 laptop:py-8 laptop:px-6 rounded-2xl overflow-y-auto"
     >
         <div class="flex gap-2">
-            <p class="w-9 shrink-0 text-sm text-right">2024</p>
+            <p class="w-9 shrink-0 text-sm text-right">2026</p>
             <div class="flex flex-col items-center justify-start">
                 <span class="w-2 h-2 block bg-sand-100 rounded-lg shrink-0"></span>
                 <span class="w-px h-full block bg-sand-100"></span>
             </div>
             <div class="flex flex-col">
                 <div class="mb-4 laptop:mb-6">
+                    <p class="leading-5 mb-1 laptop:text-lg laptop:leading-6">Développeur web full-stack</p>
+                    <p class="text-xs">Bluspark | Consoneo Group <br> Bordeaux</p>
+                </div>
+            </div>
+        </div>
+        <div class="flex gap-2">
+            <p class="w-9 shrink-0 text-sm text-right">2024</p>
+            <div class="flex flex-col items-center justify-start">
+                <span class="w-px h-1 block bg-sand-100"></span>
+                <span class="w-2 h-2 block bg-sand-100 rounded-lg shrink-0"></span>
+                <span class="w-px h-full block bg-sand-100"></span>
+            </div>
+            <div class="flex flex-col">
+                <div class="mb-4 laptop:mb-6">
                     <p class="leading-5 mb-1 laptop:text-lg laptop:leading-6">Développeur web full-stack</p>
-                    <p class="text-xs">Consoneo <br> Bordeaux</p>
+                    <p class="text-xs">Consoneo | Consoneo Group <br> Bordeaux</p>
                 </div>
             </div>
         </div>
@@ -49,26 +66,9 @@ onMounted(() => {
                     <p class="leading-5 mb-1 laptop:text-lg laptop:leading-6">Développeur web en alternance</p>
                     <p class="text-xs">Agence web 16h33 Champniers</p>
                 </div>
-                <div class="mb-4 laptop:mb-6">
-                    <p class="leading-5 mb-1 laptop:text-lg laptop:leading-6">Développeur web</p>
-                    <p class="text-xs">Bandbreite <br> Europe</p>
-                </div>
             </div>
         </div>
         <div class="flex gap-2">
-            <p class="w-9 shrink-0 text-sm text-right">2016</p>
-            <div class="flex flex-col items-center justify-start">
-                <span class="w-px h-1 block bg-sand-100"></span>
-                <span class="w-2 h-2 block bg-sand-100 rounded-lg shrink-0"></span>
-                <span class="w-px h-full block bg-sand-100"></span>
-            </div>
-            <div class="flex flex-col">
-                <div class="mb-4 laptop:mb-6">
-                    <p class="leading-5 mb-1 laptop:text-lg laptop:leading-6">Découverte de ma passion</p>
-                </div>
-            </div>
-        </div>
-        <div class="flex gap-2 h-full">
             <p class="w-9 shrink-0 text-sm text-right">2000</p>
             <div class="flex flex-col items-center justify-start">
                 <span class="w-px h-1 block bg-sand-100"></span>
